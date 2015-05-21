@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClassGenerator
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy ParameterViewWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ParameterViewWindow : Window
     {
-        public MainWindow()
+        public ParameterViewWindow()
         {
             InitializeComponent();
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            var addClassWindow = new ClassWindow();
-            addClassWindow.ShowDialog();
-            var addMethodWindow = new MethodViewWindow();
-            addMethodWindow.ShowDialog();
         }
     }
 }
