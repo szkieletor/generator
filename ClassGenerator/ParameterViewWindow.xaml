@@ -1,0 +1,33 @@
+﻿<Window x:Class="ClassGenerator.ParameterViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lista parametrow" Height="270" Width="500" MinHeight="270" MinWidth="400">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label>Lista parametrów</Label>
+        <ListView Name="MethodList" Margin="5,25"></ListView>
+        <!-- <Grid.Column="1" >
+            <Button Name="AddMethod" Content="Dodaj" Margin="15"></Button>
+            <Button Name="RemoveMethod" Content="Usun" Margin="15"></Button>
+            <Button Name="EditMethod" Content="Edytuj" Margin="15"></Button>
+            <Button Name="SaveMethod" Content="Zapisz" Margin="15"></Button>
+        </>-->
+        <Grid Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Name="AddMethod" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia nowego pola"></Button>
+            <Button Name="RemoveMethod" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczone pola z listy"></Button>
+            <Button Name="EditMethod" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych pola wybierz tę opcję"></Button>
+            <Button Name="SaveMethod" Content="Zapisz" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście pól"></Button>
+        </Grid>
+    </Grid>
+</Window>
