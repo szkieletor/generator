@@ -51,10 +51,10 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="AddEditButton" Grid.Row="1" Style="{StaticResource StandardButton}" ToolTip="Dodaje klasę do listy obecnych klas i zamyka okno">Dodaj</Button>
-            <Button Name="CancelButton" Grid.Column="1" Grid.Row="1" Style="{StaticResource StandardButton}" ToolTip="Zamyka okno anulując wprowadzone dane">Anuluj</Button>
-            <Button Name="ParameterViewButton" Grid.Row="0" Style="{StaticResource StandardButton}" ToolTip="Wyswietla okienko do zmian na liście parametrów">Parametry</Button>
-            <Button Name="MethodViewButton" Grid.Column="1" Grid.Row="0" Style="{StaticResource StandardButton}" ToolTip="Wyswietla okienko do zmian na liście metod">Metody</Button>
+            <Button Name="AddEditButton" Grid.Row="1" Style="{StaticResource ClassWindowButton}" ToolTip="Dodaje klasę do listy obecnych klas i zamyka okno">Dodaj</Button>
+            <Button Name="CancelButton" Grid.Column="1" Grid.Row="1" Style="{StaticResource ClassWindowButton}" ToolTip="Zamyka okno anulując wprowadzone dane">Anuluj</Button>
+            <Button Name="ParameterViewButton" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście parametrów">Parametry</Button>
+            <Button Name="MethodViewButton" Grid.Column="1" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście metod">Metody</Button>
         </Grid>
         <RichTextBox Name="GeneratedClassTextBox" Grid.Column="2" Grid.RowSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource StandardRichTextBox}" ></RichTextBox>
     </Grid>
