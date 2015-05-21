@@ -57,6 +57,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditMethodWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPropertyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +75,12 @@
     </Compile>
     <Compile Include="ClassWindow.xaml.cs">
       <DependentUpon>ClassWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditMethodWindow.xaml.cs">
+      <DependentUpon>EditMethodWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPropertyWindow.xaml.cs">
+      <DependentUpon>EditPropertyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
