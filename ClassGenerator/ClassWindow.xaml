@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ClassGenerator.ClassWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ClassWindow" Height="320" Width="500" MinWidth="450" MaxWidth="700" MinHeight="285" MaxHeight="450">
+        Title="ClassWindow" Height="340" Width="500" MinWidth="450" MaxWidth="700" MinHeight="325" MaxHeight="450">
     <Grid Style="{StaticResource StandardGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
