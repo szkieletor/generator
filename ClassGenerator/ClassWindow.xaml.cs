@@ -23,5 +23,16 @@ namespace ClassGenerator
         {
             InitializeComponent();
         }
+        private void MethodViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            var MethodViewWindow = new MethodViewWindow();
+            MethodViewWindow.ShowDialog();
+        }
+
+        private void ParameterViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            var ParameterViewWindow = new ParameterViewWindow();
+            ParameterViewWindow.ShowDialog();
+        }
     }
 }

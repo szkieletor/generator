@@ -29,5 +29,11 @@ namespace ClassGenerator
             var parameterEditWindow = new EditPropertyWindow();
             parameterEditWindow.ShowDialog();
         }
+
+        private void EditParameter_Click(object sender, RoutedEventArgs e)
+        {
+            var parameterEditWindow = new EditPropertyWindow();
+            parameterEditWindow.ShowDialog();
+        }
     }
 }

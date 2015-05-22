@@ -15,7 +15,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Button Name="AddButton" Style="{StaticResource StandardButton}" Click="AddButton_Click">Dodaj</Button>
-                <Button Name="EditButton" Grid.Column="1" Style="{StaticResource StandardButton}">Edytuj</Button>
+                <Button Name="EditButton" Grid.Column="1" Style="{StaticResource StandardButton}" Click="EditButton_Click">Edytuj</Button>
                 <Button Name="DeleteButton" Grid.Row="1" Style="{StaticResource StandardButton}">Usun</Button>
                 <Button Name="SaveButton" Grid.Column="1" Grid.Row="1" Style="{StaticResource StandardButton}">Zapisz</Button>
                 <Button Name="CloseButton" Grid.Column="2" Grid.Row="1" Style="{StaticResource StandardButton}">Zamknij</Button>

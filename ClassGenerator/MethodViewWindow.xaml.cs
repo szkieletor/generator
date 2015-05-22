@@ -26,8 +26,16 @@ namespace ClassGenerator
 
         private void AddMethod_Click(object sender, RoutedEventArgs e)
         {
-            var methodViewWindow = new EditMethodWindow();
-            methodViewWindow.Show();
+            var EditMethodWindow = new EditMethodWindow();
+            EditMethodWindow.Show();
+        }
+
+        private void EditMethod_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                var EditMethodWindow = new EditMethodWindow();
+                EditMethodWindow.Show();
+            }
         }
     }
 }

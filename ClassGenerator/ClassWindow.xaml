@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ClassGenerator.ClassWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ClassWindow" Height="300" Width="500" MinWidth="450" MaxWidth="700" MinHeight="285" MaxHeight="320">
+        Title="ClassWindow" Height="320" Width="500" MinWidth="450" MaxWidth="700" MinHeight="285" MaxHeight="450">
     <Grid Style="{StaticResource StandardGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -50,11 +50,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Button Name="AddEditButton" Grid.Row="1" Style="{StaticResource ClassWindowButton}" ToolTip="Dodaje klasę do listy obecnych klas i zamyka okno">Dodaj</Button>
             <Button Name="CancelButton" Grid.Column="1" Grid.Row="1" Style="{StaticResource ClassWindowButton}" ToolTip="Zamyka okno anulując wprowadzone dane">Anuluj</Button>
-            <Button Name="ParameterViewButton" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście parametrów">Parametry</Button>
-            <Button Name="MethodViewButton" Grid.Column="1" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście metod">Metody</Button>
+            <Button Name="ParameterViewButton" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście parametrów" Click="ParameterViewButton_Click">Parametry</Button>
+            <Button Name="MethodViewButton" Grid.Column="1" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście metod" Click="MethodViewButton_Click">Metody</Button>
+            <Button Name="CodeGeneratorButton" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="auto" Style="{StaticResource ClassWindowButton}">Generuj kod źródłowy</Button>
         </Grid>
         <RichTextBox Name="GeneratedClassTextBox" Grid.Column="2" Grid.RowSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource StandardRichTextBox}" ></RichTextBox>
     </Grid>

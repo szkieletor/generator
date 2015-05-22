@@ -29,8 +29,13 @@ namespace ClassGenerator
         {
             var addClassWindow = new ClassWindow();
             addClassWindow.ShowDialog();
-            var addMethodWindow = new MethodViewWindow();
-            addMethodWindow.ShowDialog();
+            
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            var editClassWindow = new ClassWindow();
+            editClassWindow.ShowDialog();
         }
     }
 }

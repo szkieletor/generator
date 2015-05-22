@@ -54,8 +54,8 @@
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Name="AddParameter" Style="{StaticResource StandardButton}" Grid.Column="0" Content="Dodaj" ToolTip="Otwiera nowe okienko do wprowadzenia nowego prametru"></Button>
-                <Button Name="EditParameter" Style="{StaticResource StandardButton}" Grid.Column="1" Content="Zmień" ToolTip="Otwiera nowe okienko w celu edycji aktualnie zaznaczonego parametru"></Button>
+                <Button Name="AddParameter" Style="{StaticResource StandardButton}" Grid.Column="0" Content="Dodaj" ToolTip="Otwiera nowe okienko do wprowadzenia nowego prametru" Click="AddParameter_Click"></Button>
+                <Button Name="EditParameter" Style="{StaticResource StandardButton}" Grid.Column="1" Content="Zmień" ToolTip="Otwiera nowe okienko w celu edycji aktualnie zaznaczonego parametru" Click="EditParameter_Click"></Button>
                 <Button Name="RemoveParameterFromList" Style="{StaticResource StandardButton}" Grid.Column="2" Content="Usuń" ToolTip="Usuwa z listy aktualnie zaznaczony element"></Button>
             
         </Grid>

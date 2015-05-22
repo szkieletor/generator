@@ -1,0 +1,28 @@
+﻿<Window x:Class="ClassGenerator.ParameterMethodWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ParameterMethodWindow" Height="150" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label>Nazwa</Label>
+        <Label Grid.Row="1">Typ</Label>
+        <TextBox Name="NameTextBox" Style="{StaticResource StandardTextBox}" Grid.Column="1"></TextBox>
+        <TextBox Name="TypeTextBox" Style="{StaticResource StandardTextBox}" Grid.Column="1" Grid.Row="1"></TextBox>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="AcceptMethod" Style="{StaticResource StandardButton}" Grid.Column="0" Content="Zapisz" ToolTip="Zamyka okno i umieszcza metode na liscie"></Button>
+            <Button Name="RejectMethod" Style="{StaticResource StandardButton}" Grid.Column="1" Content="Anuluj" ToolTip="Zamyka okno i anuluje wprowadzone zmiany"></Button>
+        </Grid>
+    </Grid>
+</Window>
