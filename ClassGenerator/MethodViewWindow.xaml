@@ -24,7 +24,7 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="AddMethod" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia metod"></Button>
+            <Button Name="AddMethod" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia metod" Click="AddMethod_Click"></Button>
             <Button Name="RemoveMethod" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczoną metodę z listy"></Button>
             <Button Name="EditMethod" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych metody wybierz tę opcję"></Button>
             <Button Name="SaveMethod" Content="Zapisz" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście metod"></Button>

@@ -23,5 +23,11 @@ namespace ClassGenerator
         {
             InitializeComponent();
         }
+
+        private void AddMethod_Click(object sender, RoutedEventArgs e)
+        {
+            var methodViewWindow = new EditMethodWindow();
+            methodViewWindow.Show();
+        }
     }
 }
