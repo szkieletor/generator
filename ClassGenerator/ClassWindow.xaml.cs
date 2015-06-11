@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassGenerator.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace ClassGenerator
     {
         public ClassWindow()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
         private void MethodViewButton_Click(object sender, RoutedEventArgs e)
         {

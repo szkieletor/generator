@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassGenerator.Models
 {
-    class GeneratedProperty
+    public class GeneratedProperty
     {
         public string Type { get; set; }
         public string Name { get; set; }
