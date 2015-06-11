@@ -103,6 +103,11 @@
     <Compile Include="MethodViewWindow.xaml.cs">
       <DependentUpon>MethodViewWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Encapsulation.cs" />
+    <Compile Include="Models\GeneratedClass.cs" />
+    <Compile Include="Models\GeneratedMethod.cs" />
+    <Compile Include="Models\GeneratedParameter.cs" />
+    <Compile Include="Models\GeneratedProperty.cs" />
     <Compile Include="ParameterViewWindow.xaml.cs">
       <DependentUpon>ParameterViewWindow.xaml</DependentUpon>
     </Compile>
