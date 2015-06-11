@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ClassGenerator.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data;
 using System.Linq;

@@ -20,9 +20,29 @@ namespace ClassGenerator
     /// </summary>
     public partial class ClassWindow : Window
     {
+        public GeneratedClass CurrentClass { get; set; }
         public ClassWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            CurrentClass = new GeneratedClass();
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow.ClassListView.SelectedItem != null) //Edit
+            {
+                Binding classBinding = new Binding();
+                classBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
+                classBinding.Path = new PropertyPath("Name");
+                classBinding.Mode = BindingMode.TwoWay;
+                ClassName.SetBinding(TextBox.TextProperty, classBinding);
+            }
+            else
+            {
+                Binding classBinding = new Binding();
+                classBinding.Source = CurrentClass;
+                classBinding.Path = new PropertyPath("Name");
+                classBinding.Mode = BindingMode.TwoWay;
+                ClassName.SetBinding(TextBox.TextProperty, classBinding);
+            }
         }
         private void MethodViewButton_Click(object sender, RoutedEventArgs e)
         {
@@ -34,6 +54,20 @@ namespace ClassGenerator
         {
             var ParameterViewWindow = new ParameterViewWindow();
             ParameterViewWindow.ShowDialog();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddEditButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            if (mainWindow.ClassListView.SelectedItem == null) //Edit
+            {
+                mainWindow.ClassList.Add(CurrentClass);
+            }
         }
     }
 }

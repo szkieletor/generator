@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassGenerator.Models
 {
-    enum Encapsulation
+    public enum Encapsulation
     {
         Public,
         Private,
