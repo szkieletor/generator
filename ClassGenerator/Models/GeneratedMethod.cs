@@ -14,5 +14,6 @@ namespace ClassGenerator.Models
         public bool IsOverride { get; set; }
         public string ReturnType { get; set; }
         public List<string> Parameters { get; set; }
+        public string Name { get; set; }
     }
 }

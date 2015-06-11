@@ -20,10 +20,12 @@ namespace ClassGenerator
     /// </summary>
     public partial class ClassWindow : Window
     {
+        public string SourceCode;
+        GeneratedClass generatedClass;
         public GeneratedClass CurrentClass { get; set; }
         public ClassWindow()
         {
-            InitializeComponent();
+            InitializeComponent();           
             CurrentClass = new GeneratedClass();
             var mainWindow = (MainWindow)Application.Current.MainWindow;
 
@@ -42,7 +44,7 @@ namespace ClassGenerator
                 classBinding.Path = new PropertyPath("Name");
                 classBinding.Mode = BindingMode.TwoWay;
                 ClassName.SetBinding(TextBox.TextProperty, classBinding);
-            }
+        }
         }
         private void MethodViewButton_Click(object sender, RoutedEventArgs e)
         {
@@ -69,5 +71,11 @@ namespace ClassGenerator
                 mainWindow.ClassList.Add(CurrentClass);
             }
         }
+
+        private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            GeneratedClassTextBox.Document.Blocks.Add(new Paragraph(new Run(generatedClass.SourceCode())));
+            }
     }
 }
