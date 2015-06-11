@@ -56,7 +56,7 @@
             <Button Name="CancelButton" Grid.Column="1" Grid.Row="1" Style="{StaticResource ClassWindowButton}" ToolTip="Zamyka okno anulując wprowadzone dane">Anuluj</Button>
             <Button Name="ParameterViewButton" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście parametrów" Click="ParameterViewButton_Click">Parametry</Button>
             <Button Name="MethodViewButton" Grid.Column="1" Grid.Row="0" Style="{StaticResource ClassWindowButton}" ToolTip="Wyswietla okienko do zmian na liście metod" Click="MethodViewButton_Click">Metody</Button>
-            <Button Name="CodeGeneratorButton" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="auto" Style="{StaticResource ClassWindowButton}">Generuj kod źródłowy</Button>
+            <Button Name="CodeGeneratorButton" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="auto" Style="{StaticResource ClassWindowButton}" Click="CodeGeneratorButton_Click">Generuj kod źródłowy</Button>
         </Grid>
         <RichTextBox Name="GeneratedClassTextBox" Grid.Column="2" Grid.RowSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource StandardRichTextBox}" ></RichTextBox>
     </Grid>
