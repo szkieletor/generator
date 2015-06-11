@@ -40,77 +40,8 @@ namespace ClassGenerator
 
         private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)
         {
-            SourceCode= " ";
-            if(generatedClass.IsAbstract)
-            {
-                SourceCode += "Abstract ";
-            }
-            if(generatedClass.IsStatic)
-            {
-                SourceCode += "Static ";
-            }
-            if(generatedClass.IsSealed)
-            {
-                SourceCode += "Sealed ";
-            }
-            SourceCode += "Class " + generatedClass.Name;
-            if(generatedClass.BaseClass!=null)
-            {
-                SourceCode += ": "+generatedClass.BaseClass.Name; 
-            }
-                SourceCode += "\n";
-            SourceCode += "{\n";
             
-            foreach(GeneratedProperty property in generatedClass.Properties)
-            {
-                SourceCode += property.Type + " " + property.Name;
-                if(property.IsGetterIncluded && property.IsSetterIncluded)
-                {
-                    SourceCode += " { get; set;}\n";
-                }
-                else
-                {
-                    if (property.IsGetterIncluded && !property.IsSetterIncluded)
-                    {
-                        SourceCode += " { get;}\n";
-                    }
-                    else
-                    {
-                        if (!property.IsGetterIncluded && property.IsSetterIncluded)
-                        {
-                            SourceCode += " { set;}\n";
-                        }
-                        else
-                        {
-                            SourceCode += "\n";
-                        }
-                    }
-                }
-            }
-            foreach(GeneratedMethod method in generatedClass.Methods)
-            {
-                SourceCode += method.Encapsulation.ToString()+ " ";
-                if(method.IsOverride)
-                {
-                    SourceCode += "Override ";
-                }
-                if(method.IsStatic)
-                {
-                    SourceCode += "Static ";
-                }
-                if(method.IsSealed)
-                {
-                    SourceCode += "Sealed ";
-                }
-                    SourceCode += method.ReturnType + " " +method.Name + "(";
-                    foreach(string Parameter in method.Parameters)
-                    {
-                        SourceCode = Parameter+",";
-                    }
-                    SourceCode +=")\n";
-            }
-            SourceCode+="}\n";
-            GeneratedClassTextBox.Document.Blocks.Add(new Paragraph(new Run(SourceCode)));
+            GeneratedClassTextBox.Document.Blocks.Add(new Paragraph(new Run(generatedClass.SourceCode())));
             }
         }
     }
