@@ -1,4 +1,4 @@
-﻿<Window x:Class="ClassGenerator.MainWindow"
+﻿<Window x:Class="ClassGenerator.MainWindow" Style="{StaticResource  StandardWindow}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="GeneratorKlas" MinHeight="350" MinWidth="321" Height="350" Width="321">
