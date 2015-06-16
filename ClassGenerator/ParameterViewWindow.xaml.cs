@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassGenerator.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,22 @@ namespace ClassGenerator
     /// </summary>
     public partial class ParameterViewWindow : Window
     {
+        GeneratedClass ClassRef { get; set; }
+        public void ToClassRef(GeneratedClass classref)
+        {
+            ClassRef = classref;
+            ParameterViewList.ItemsSource = ClassRef.Properties;
+        }
         public ParameterViewWindow()
         {
             InitializeComponent();
+            
         }
 
         private void AddParameter_Click(object sender, RoutedEventArgs e)
         {
             var parameterEditWindow = new EditPropertyWindow();
+            parameterEditWindow.ToClassRef(ClassRef);
             parameterEditWindow.ShowDialog();
         }
 

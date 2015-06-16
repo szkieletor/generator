@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassGenerator.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,15 @@ namespace ClassGenerator
     /// <summary>
     /// Logika interakcji dla klasy MethodViewWindow.xaml
     /// </summary>
+    
     public partial class MethodViewWindow : Window
     {
+        public GeneratedClass ClassRef { get; set; }
+
+        public void ToClassRef(GeneratedClass classref)
+        {
+            ClassRef = classref;
+        }
         public MethodViewWindow()
         {
             InitializeComponent();
@@ -27,6 +35,7 @@ namespace ClassGenerator
         private void AddMethod_Click(object sender, RoutedEventArgs e)
         {
             var EditMethodWindow = new EditMethodWindow();
+            
             EditMethodWindow.Show();
         }
 

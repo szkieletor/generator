@@ -10,7 +10,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label>Lista parametrów</Label>
-        <ListView Name="MethodList" Margin="5,25"></ListView>
+        <ListView x:Name="ParameterViewList" Style="{StaticResource StandardListView}" Width="auto"></ListView>
         <!-- <Grid.Column="1" >
             <Button Name="AddMethod" Content="Dodaj" Margin="15"></Button>
             <Button Name="RemoveMethod" Content="Usun" Margin="15"></Button>

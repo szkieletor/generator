@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,8 @@ namespace ClassGenerator.Models
 {
     public class GeneratedClass : INotifyPropertyChanged
     {
-        public List<GeneratedProperty> Properties { get; set; }
-        public List<GeneratedMethod> Methods { get; set; }
+        public ObservableCollection<GeneratedProperty> Properties { get; set; }
+        public ObservableCollection<GeneratedMethod> Methods { get; set; }
         public string Name { get; set; }
         public Encapsulation Encapsulation { get; set; }
         public bool IsStatic { get; set; }
@@ -101,8 +102,8 @@ namespace ClassGenerator.Models
 
         public GeneratedClass()
         {
-            Properties = new List<GeneratedProperty>();
-            Methods = new List<GeneratedMethod>();
+            Properties = new ObservableCollection<GeneratedProperty>();
+            Methods = new ObservableCollection<GeneratedMethod>();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

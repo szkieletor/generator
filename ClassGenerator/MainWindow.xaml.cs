@@ -27,6 +27,8 @@ namespace ClassGenerator
         {
             ClassList = new ObservableCollection<GeneratedClass>();
             InitializeComponent();
+            ClassListView.ItemsSource = ClassList;
+            
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

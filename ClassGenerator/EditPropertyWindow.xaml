@@ -35,7 +35,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <CheckBox Content="Getter"/>
+                <CheckBox Name="GetterCheckBox" Content="Getter"/>
                 <Label Grid.Row="1">Hermetyzacja</Label>
                 <ComboBox Name="GetterEncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="2" ToolTip="Wybierz z listy regułę hermetyzacji">
                     <ComboBoxItem>Publiczna</ComboBoxItem>
@@ -54,7 +54,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <CheckBox Content="Setter"/>
+                <CheckBox Name="SetterCheckBox" Content="Setter"/>
                 <Label Grid.Row="1">Hermetyzacja</Label>
                 <ComboBox Name="SetterEncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="2" ToolTip="Wybierz z listy regułę hermetyzacji">
                     <ComboBoxItem>Publiczna</ComboBoxItem>
@@ -69,7 +69,7 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="SaveParameter" Style="{StaticResource StandardButton}" Content="Zatwierdź"></Button>
+            <Button Name="SaveParameter" Style="{StaticResource StandardButton}" Content="Zatwierdź" Click="SaveParameter_Click"></Button>
             <Button Name="Cancel" Style="{StaticResource StandardButton}" Content="Anuluj" Grid.Column="1"></Button>
         </Grid>
         </Grid>
