@@ -8,8 +8,8 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <RadialGradientBrush>
-                        <GradientStop Color="Bisque" Offset="0"/>
-                        <GradientStop Color="Blue" Offset="1"/>
+                        <GradientStop Color="#57ff64" Offset="0"/>
+                        <GradientStop Color="#77f22e" Offset="1"/>
                     </RadialGradientBrush>
                 </Setter.Value>
             </Setter>
@@ -38,8 +38,8 @@
                     <Setter Property="Button.Background">
                         <Setter.Value>
                             <LinearGradientBrush>
-                                <GradientStop Color="Red" Offset="0"></GradientStop>
-                                <GradientStop Color="Gainsboro" Offset="1"></GradientStop>
+                                <GradientStop Color="#448232" Offset="0"></GradientStop>
+                                <GradientStop Color="#53ff43" Offset="1"></GradientStop>
                             </LinearGradientBrush>
                         </Setter.Value>
                     </Setter>
@@ -49,8 +49,8 @@
                     <Setter Property="Background">
                         <Setter.Value>
                             <LinearGradientBrush>
-                                <GradientStop Color="Gold" Offset="0"></GradientStop>
-                                <GradientStop Color="Silver" Offset="1"></GradientStop>
+                                <GradientStop Color="#43ffcc" Offset="0"></GradientStop>
+                                <GradientStop Color="#0f4393" Offset="1"></GradientStop>
                             </LinearGradientBrush>
                         </Setter.Value>
                     </Setter>
@@ -82,6 +82,18 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <Trigger Property="Background">
+                    <Trigger.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#88ff88" Offset="0.0"></GradientStop>
+                            <GradientStop Color="#338755" Offset="0.1"></GradientStop>
+                            <GradientStop Color="#578742" Offset="1.0"></GradientStop>
+                            <GradientStop Color="#549233" Offset="1.1"></GradientStop>
+                        </LinearGradientBrush>
+                    </Trigger.Value>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         
         
@@ -113,8 +125,8 @@
                     <Setter Property="Background">
                         <Setter.Value>
                             <LinearGradientBrush>
-                                <GradientStop Color="Aqua" Offset="0"></GradientStop>
-                                <GradientStop Color="Aquamarine" Offset="1"></GradientStop>
+                                <GradientStop Color="#00ff00" Offset="0"></GradientStop>
+                                <GradientStop Color="#88ff33" Offset="1"></GradientStop>
                             </LinearGradientBrush>
                         </Setter.Value>
                     </Setter>
@@ -123,8 +135,8 @@
                     <Setter Property="Background">
                         <Setter.Value>
                             <LinearGradientBrush>
-                                <GradientStop Color="Gold" Offset="0"></GradientStop>
-                                <GradientStop Color="LightYellow" Offset="1"></GradientStop>
+                                <GradientStop Color="#33ff99" Offset="0"></GradientStop>
+                                <GradientStop Color="#44ff88" Offset="1"></GradientStop>
                             </LinearGradientBrush>
                         </Setter.Value>
                     </Setter>

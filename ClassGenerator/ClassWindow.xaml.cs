@@ -77,8 +77,7 @@ namespace ClassGenerator
 
         private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)
         {
-            
             GeneratedClassTextBox.Document.Blocks.Add(new Paragraph(new Run(generatedClass.SourceCode())));
-            }
+        }
     }
 }

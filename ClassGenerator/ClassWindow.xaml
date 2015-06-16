@@ -1,4 +1,4 @@
-﻿<Window x:Class="ClassGenerator.ClassWindow"
+﻿<Window x:Class="ClassGenerator.ClassWindow" Style="{StaticResource StandardWindow}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ClassWindow" Height="340" Width="500" MinWidth="450" MaxWidth="700" MinHeight="325" MaxHeight="450">
@@ -29,7 +29,7 @@
                 <Label>Nazwa klasy</Label>
                 <TextBox Name="ClassName" Grid.Column="1" Style="{StaticResource StandardTextBox}"/>
                 <Label Grid.Row="1">Hermetyzacja</Label>
-                <ComboBox Name="EncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="1" ToolTip="Wybierz z listy regułę hermetyzacji">
+                <ComboBox Name="EncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="1" ToolTip="Wybierz z listy regułę hermetyzacji" >
                     <ComboBoxItem>Publiczna</ComboBoxItem>
                     <ComboBoxItem>Prywatna</ComboBoxItem>
                     <ComboBoxItem>Chroniona</ComboBoxItem>
