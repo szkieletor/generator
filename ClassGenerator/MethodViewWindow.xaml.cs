@@ -21,30 +21,25 @@ namespace ClassGenerator
     
     public partial class MethodViewWindow : Window
     {
-        public GeneratedClass ClassRef { get; set; }
+        public EditMethodWindow EditMethodWindow { get; set; }
 
-        public void ToClassRef(GeneratedClass classref)
-        {
-            ClassRef = classref;
-        }
+
         public MethodViewWindow()
         {
             InitializeComponent();
+            MethodList.ItemsSource = ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.Methods;
         }
 
         private void AddMethod_Click(object sender, RoutedEventArgs e)
         {
-            var EditMethodWindow = new EditMethodWindow();
-            
+            EditMethodWindow = new EditMethodWindow();
             EditMethodWindow.Show();
         }
 
         private void EditMethod_Click(object sender, RoutedEventArgs e)
         {
-            {
-                var EditMethodWindow = new EditMethodWindow();
-                EditMethodWindow.Show();
-            }
+            EditMethodWindow = new EditMethodWindow();
+            EditMethodWindow.Show();
         }
     }
 }

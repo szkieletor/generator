@@ -23,6 +23,8 @@ namespace ClassGenerator
         public string SourceCode;
         GeneratedClass generatedClass;
         public GeneratedClass CurrentClass { get; set; }
+
+        public MethodViewWindow MethodViewWindow { get; set; }
         public ClassWindow()
         {
             InitializeComponent();           
@@ -48,8 +50,7 @@ namespace ClassGenerator
         }
         private void MethodViewButton_Click(object sender, RoutedEventArgs e)
         {
-            var MethodViewWindow = new MethodViewWindow();
-            MethodViewWindow.ToClassRef(CurrentClass);
+            MethodViewWindow = new MethodViewWindow();
             MethodViewWindow.ShowDialog();
         }
 

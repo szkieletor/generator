@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassGenerator.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace ClassGenerator
     /// </summary>
     public partial class EditMethodWindow : Window
     {
+        public GeneratedMethod CurrentMethod { get; set; }
         public EditMethodWindow()
         {
             InitializeComponent();
+            EncapsulationComboBox.ItemsSource = Enum.GetValues(typeof(Encapsulation)).Cast<Encapsulation>();
+            CurrentMethod = new GeneratedMethod();
+            if (((MainWindow)Application.Current.MainWindow).ClassWindow.MethodViewWindow.MethodList.SelectedIndex != -1)
+            {
+                CurrentMethod = (GeneratedMethod)((MainWindow)Application.Current.MainWindow).ClassWindow.MethodViewWindow.MethodList.SelectedItem;
+            }
+            MethodDetails.DataContext = CurrentMethod;
         }
 
         private void AddParameter_Click(object sender, RoutedEventArgs e)
@@ -34,6 +43,12 @@ namespace ClassGenerator
         {
             var parameterMethodWindow = new ParameterMethodWindow();
             parameterMethodWindow.ShowDialog();
+        }
+
+        private void AcceptMethod_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.Methods.Add(CurrentMethod);
+            Close();
         }
     }
 }

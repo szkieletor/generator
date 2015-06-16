@@ -12,6 +12,7 @@ namespace ClassGenerator.Models
         public bool IsStatic { get; set; }
         public bool IsSealed { get; set; }
         public bool IsOverride { get; set; }
+        public bool IsAbstract { get; set; }
         public string ReturnType { get; set; }
         public List<string> Parameters { get; set; }
         public string Name { get; set; }

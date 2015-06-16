@@ -34,10 +34,11 @@
                     <ComboBoxItem>Prywatna</ComboBoxItem>
                     <ComboBoxItem>Chroniona</ComboBoxItem>
                 </ComboBox>
-                <Label Grid.Row="2">Typ klasy</Label>
+                <Label Grid.Row="2">Zwracana wartość</Label>
                 <ComboBox Name="ReturnValueComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="2" ToolTip="Wybierz z listy typ klasy" SelectedIndex="0">
-                    <ComboBoxItem>Zwykła</ComboBoxItem>
-                    <ComboBoxItem>Finalna</ComboBoxItem>
+                    <ComboBoxItem>int</ComboBoxItem>
+                    <ComboBoxItem>string</ComboBoxItem>
+                    <ComboBoxItem>bool</ComboBoxItem>
                 </ComboBox>
                 <CheckBox Content="Abstrakcyjna" Grid.ColumnSpan="2" Grid.Row="3"/>
             </Grid>

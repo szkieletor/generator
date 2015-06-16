@@ -22,27 +22,27 @@ namespace ClassGenerator
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ClassWindow ClassWindow { get; set; }
         public ObservableCollection<GeneratedClass> ClassList { get; set; }
         public MainWindow()
         {
             ClassList = new ObservableCollection<GeneratedClass>();
             InitializeComponent();
             ClassListView.ItemsSource = ClassList;
-            
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             var newClass = new GeneratedClass();
             ClassListView.SelectedItem = null;
-            var addClassWindow = new ClassWindow();
-            addClassWindow.ShowDialog();
+            ClassWindow = new ClassWindow();
+            ClassWindow.ShowDialog();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            var editClassWindow = new ClassWindow();
-            editClassWindow.ShowDialog();
+            ClassWindow = new ClassWindow();
+            ClassWindow.ShowDialog();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
