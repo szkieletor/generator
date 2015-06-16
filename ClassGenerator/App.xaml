@@ -3,8 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <!--Okna-->
+        <Style TargetType="Window" x:Key="StandardWindow">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Bisque" Offset="0"/>
+                        <GradientStop Color="Blue" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Przyciski-->
         <Style TargetType="Button" x:Key="StandardButton" >
-            
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -22,24 +33,6 @@
                         </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-        <Style TargetType="ListView" x:Key="StandardListView" >
-            <Setter Property="Margin" Value="5, 5, 0, 5"/>
-            <Setter Property="Padding" Value="5"/>
-        </Style>
-        <Style TargetType="Grid" x:Key="StandardGrid">
-            <Setter Property="Margin" Value="20"/>
-        </Style>
-        <Style TargetType="RichTextBox" x:Key="StandardRichTextBox">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style TargetType="TextBox" x:Key="StandardTextBox">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style TargetType="ComboBox" x:Key="StandardComboBox">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style TargetType="Button" BasedOn="{StaticResource StandardButton}" x:Key="ClassWindowButton">
             <Style.Triggers>
                 <Trigger Property="Control.IsMouseOver" Value="false">
                     <Setter Property="Button.Background">
@@ -64,5 +57,107 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource StandardButton}" x:Key="ViewButton">
+
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="auto"/>
+            <Setter Property="Width" Value="auto"/>
+        </Style>
+        <!--ListView-->
+        <Style TargetType="ListView" x:Key="StandardListView" >
+            <Setter Property="Margin" Value="5, 5, 0, 5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListView}">
+                        <Border Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
+                            CornerRadius="5 5 5 5" Background="{TemplateBinding Background}"
+                            TextBlock.Foreground="Black">
+                            <ContentPresenter RecognizesAccessKey="True"
+                                          Margin="{TemplateBinding Padding}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        
+        <!--Grid-->
+        <Style TargetType="Grid" x:Key="StandardGrid">
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+        <!--RichTextBox-->
+        <Style TargetType="RichTextBox" x:Key="StandardRichTextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RichTextBox}">
+                        <Border Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
+                            CornerRadius="5 5 5 5" Background="{TemplateBinding Background}"
+                            TextBlock.Foreground="Black">
+                            <ContentPresenter RecognizesAccessKey="True"
+                                          Margin="{TemplateBinding Padding}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--TextBox-->
+        <Style TargetType="TextBox" x:Key="StandardTextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="False">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Aqua" Offset="0"></GradientStop>
+                                <GradientStop Color="Aquamarine" Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Gold" Offset="0"></GradientStop>
+                                <GradientStop Color="LightYellow" Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!--ComboBox-->
+        <Style TargetType="ComboBox" x:Key="StandardComboBox">
+            <Setter Property="Margin" Value="5"/>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="False">
+                    <Setter Property="Foreground">
+                        <Setter.Value>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Aqua" Offset="0"></GradientStop>
+                                <GradientStop Color="Aquamarine" Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Gold" Offset="0"></GradientStop>
+                                <GradientStop Color="LightYellow" Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
     </Application.Resources>
 </Application>

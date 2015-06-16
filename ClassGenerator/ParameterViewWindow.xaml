@@ -46,10 +46,10 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="AddParameter" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia nowego pola" Click="AddParameter_Click"></Button>
-            <Button Name="RemoveParameter" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczone pola z listy"></Button>
-            <Button Name="EditParameter" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych pola wybierz tę opcję" Click="EditParameter_Click"></Button>
-            <Button Name="SaveParameter" Content="Zapisz" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście pól"></Button>
+            <Button Name="AddParameter" Style="{StaticResource ViewButton}" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia nowego pola" Click="AddParameter_Click"></Button>
+            <Button Name="RemoveParameter" Style="{StaticResource ViewButton}" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczone pola z listy"></Button>
+            <Button Name="EditParameter" Style="{StaticResource ViewButton}" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych pola wybierz tę opcję" Click="EditParameter_Click"></Button>
+            <Button Name="SaveParameter" Style="{StaticResource ViewButton}" Content="Zapisz" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście pól"></Button>
         </Grid>
     </Grid>
 </Window>
