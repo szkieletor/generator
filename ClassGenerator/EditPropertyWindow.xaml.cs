@@ -22,16 +22,19 @@ namespace ClassGenerator
     {
         GeneratedClass classRef;
         GeneratedProperty propertyTemp {get; set;}
-        
+
+        public void GetProperty (GeneratedProperty prop)
+        {
+            propertyTemp = prop;
+        }
         public void ToClassRef(GeneratedClass ClassRef)
         {
             classRef = ClassRef;
         }
         public EditPropertyWindow()
         {
-            
-            propertyTemp = new GeneratedProperty();
             InitializeComponent();
+            propertyTemp = new GeneratedProperty();
             GetterEncapsulationComboBox.IsEnabled = false;
             SetterEncapsulationComboBox.IsEnabled = false;
             Binding NameB = new Binding();

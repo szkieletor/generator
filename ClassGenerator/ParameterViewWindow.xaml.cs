@@ -42,7 +42,13 @@ namespace ClassGenerator
         private void EditParameter_Click(object sender, RoutedEventArgs e)
         {
             var parameterEditWindow = new EditPropertyWindow();
+            parameterEditWindow.GetProperty((GeneratedProperty)ParameterViewList.SelectedItem);
             parameterEditWindow.ShowDialog();
+        }
+
+        private void RemoveParameter_Click(object sender, RoutedEventArgs e)
+        {
+            ClassRef.Properties.Remove((GeneratedProperty)ParameterViewList.SelectedItem);
         }
     }
 }
