@@ -10,7 +10,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label>Lista metod</Label>
-        <ListView Name="MethodList" Margin="5,25"></ListView>
+        <ListView Name="MethodList" Style="{StaticResource StandardListView}" Margin="5,25"></ListView>
         <!-- <Grid.Column="1" >
             <Button Name="AddMethod" Content="Dodaj" Margin="15"></Button>
             <Button Name="RemoveMethod" Content="Usun" Margin="15"></Button>
@@ -24,10 +24,10 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="AddMethod" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia metod" Click="AddMethod_Click"></Button>
-            <Button Name="RemoveMethod" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczoną metodę z listy"></Button>
-            <Button Name="EditMethod" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych metody wybierz tę opcję" Click="EditMethod_Click"></Button>
-            <Button Name="SaveMethod" Content="Zapisz" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście metod"></Button>
+            <Button Name="AddMethod" Style="{StaticResource ViewButton}" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia metod" Click="AddMethod_Click"></Button>
+            <Button Name="RemoveMethod" Style="{StaticResource ViewButton}" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczoną metodę z listy"></Button>
+            <Button Name="EditMethod" Style="{StaticResource ViewButton}" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych metody wybierz tę opcję" Click="EditMethod_Click"></Button>
+            <Button Name="SaveMethod" Style="{StaticResource ViewButton}" Content="Zapisz" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście metod"></Button>
         </Grid>
     </Grid>
 </Window>

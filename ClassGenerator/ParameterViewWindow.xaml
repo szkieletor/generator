@@ -6,11 +6,33 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="380"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label>Lista parametrów</Label>
-        <ListView x:Name="ParameterViewList" Style="{StaticResource StandardListView}" Width="auto"></ListView>
+        <ListView x:Name="ParameterViewList" Width="auto">
+            <ListView.View>
+
+                <GridView ColumnHeaderToolTip="Typy i nazwy zmiennych">
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Type}" 
+                      Header="Typ" Width="90"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Name}" 
+                     Header="Nazwa" Width="90"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=GetterEncapsulation}" 
+                     Header="Getter" Width="90"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=SetterEncapsulation}" 
+                     Header="Setter" Width="90"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <!-- <Grid.Column="1" >
             <Button Name="AddMethod" Content="Dodaj" Margin="15"></Button>
             <Button Name="RemoveMethod" Content="Usun" Margin="15"></Button>
@@ -24,10 +46,10 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="AddParameter" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia nowego pola" Click="AddParameter_Click"></Button>
-            <Button Name="RemoveParameter" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczone pola z listy"></Button>
-            <Button Name="EditParameter" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych pola wybierz tę opcję" Click="EditParameter_Click"></Button>
-            <Button Name="SaveParameter" Content="Zapisz" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście pól"></Button>
+            <Button Name="AddParameter" Style="{StaticResource ViewButton}" Content="Dodaj" Margin="15" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia nowego pola" Click="AddParameter_Click"></Button>
+            <Button Name="RemoveParameter" Style="{StaticResource ViewButton}" Content="Usun" Margin="15" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczone pola z listy" Click="RemoveParameter_Click"></Button>
+            <Button Name="EditParameter" Style="{StaticResource ViewButton}" Content="Edytuj" Margin="15" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych pola wybierz tę opcję" Click="EditParameter_Click"></Button>
+            <Button Name="Back" Style="{StaticResource ViewButton}" Content="Powrót" Margin="15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście pól"></Button>
         </Grid>
     </Grid>
 </Window>

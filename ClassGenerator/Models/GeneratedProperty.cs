@@ -10,9 +10,12 @@ namespace ClassGenerator.Models
     {
         public string Type { get; set; }
         public string Name { get; set; }
-        public bool IsGetterIncluded { get; set; }
         public Encapsulation GetterEncapsulation { get; set; }
-        public bool IsSetterIncluded  { get; set; }
         public Encapsulation SetterEncapsulation { get; set; }
+
+        //public override string ToString()
+        //{
+        //    return "Type: "+this.Type + ", Name: " + this.Name;
+        //}
     }
 }
