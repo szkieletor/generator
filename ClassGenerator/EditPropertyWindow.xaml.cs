@@ -22,14 +22,18 @@ namespace ClassGenerator
     {
         GeneratedClass classRef;
         GeneratedProperty propertyTemp {get; set;}
+        
         public void ToClassRef(GeneratedClass ClassRef)
         {
             classRef = ClassRef;
         }
         public EditPropertyWindow()
         {
+            
             propertyTemp = new GeneratedProperty();
             InitializeComponent();
+            GetterEncapsulationComboBox.IsEnabled = false;
+            SetterEncapsulationComboBox.IsEnabled = false;
             Binding NameB = new Binding();
             NameB.Source = propertyTemp;
             NameB.Path = new PropertyPath("Name");
@@ -39,15 +43,46 @@ namespace ClassGenerator
             TypeB.Source = propertyTemp;
             TypeB.Mode = BindingMode.TwoWay;
             ReturnValueComboBox.SetBinding(ComboBox.TextProperty, TypeB);
-            Binding IsGetterIncludedB = new Binding("Type");
-            IsGetterIncludedB.Source = propertyTemp;
-            IsGetterIncludedB.Mode = BindingMode.TwoWay;
-            GetterCheckBox.SetBinding(CheckBox.IsCheckedProperty, IsGetterIncludedB);
+            Binding GetterEncapsulationB = new Binding("GetterEncapsulation");
+            GetterEncapsulationB.Source = propertyTemp;
+            GetterEncapsulationB.Mode = BindingMode.TwoWay;
+            GetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, GetterEncapsulationB);
+            Binding SetterEncapsulationB = new Binding("SetterEncapsulation");
+            SetterEncapsulationB.Source = propertyTemp;
+            SetterEncapsulationB.Mode = BindingMode.TwoWay;
+            SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB);
+            
+            
         }
 
         private void SaveParameter_Click(object sender, RoutedEventArgs e)
         {
             classRef.Properties.Add(propertyTemp);
+        }
+
+        private void SetterCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+                SetterEncapsulationComboBox.IsEnabled = true;
+        }
+
+        private void SetterCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            propertyTemp.SetterEncapsulation = Encapsulation.Brak;
+            SetterEncapsulationComboBox.IsEnabled = false;
+    
+        }
+
+        private void GetterCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+                GetterEncapsulationComboBox.IsEnabled = true;
+               
+        }
+
+        private void GetterCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            propertyTemp.GetterEncapsulation = Encapsulation.Brak;
+                GetterEncapsulationComboBox.IsEnabled = false;
+                
         }
 
        

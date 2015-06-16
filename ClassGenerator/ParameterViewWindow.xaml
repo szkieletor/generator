@@ -6,11 +6,33 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="380"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label>Lista parametrów</Label>
-        <ListView x:Name="ParameterViewList" Style="{StaticResource StandardListView}" Width="auto"></ListView>
+        <ListView x:Name="ParameterViewList" Style="{StaticResource StandardListView}" Width="auto">
+            <ListView.View>
+
+                <GridView ColumnHeaderToolTip="Typy i nazwy zmiennych">
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Type}" 
+                      Header="Typ" Width="90"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Name}" 
+                     Header="Nazwa" Width="90"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=GetterEncapsulation}" 
+                     Header="Getter" Width="90"/>
+
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=SetterEncapsulation}" 
+                     Header="Setter" Width="90"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <!-- <Grid.Column="1" >
             <Button Name="AddMethod" Content="Dodaj" Margin="15"></Button>
             <Button Name="RemoveMethod" Content="Usun" Margin="15"></Button>

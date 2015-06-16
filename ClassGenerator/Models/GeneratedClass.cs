@@ -43,32 +43,32 @@ namespace ClassGenerator.Models
             SourceCode += "\n";
             SourceCode += "{\n";
 
-            foreach (GeneratedProperty property in Properties)
-            {
-                SourceCode += property.Type + " " + property.Name;
-                if (property.IsGetterIncluded && property.IsSetterIncluded)
-                {
-                    SourceCode += " { get; set;}\n";
-                }
-                else
-                {
-                    if (property.IsGetterIncluded && !property.IsSetterIncluded)
-                    {
-                        SourceCode += " { get;}\n";
-                    }
-                    else
-                    {
-                        if (!property.IsGetterIncluded && property.IsSetterIncluded)
-                        {
-                            SourceCode += " { set;}\n";
-                        }
-                        else
-                        {
-                            SourceCode += "\n";
-                        }
-                    }
-                }
-            }
+            //foreach (GeneratedProperty property in Properties)
+            //{
+            //    SourceCode += property.Type + " " + property.Name;
+            //    if (property.IsGetterIncluded && property.IsSetterIncluded)
+            //    {
+            //        SourceCode += " { get; set;}\n";
+            //    }
+            //    else
+            //    {
+            //        if (property.IsGetterIncluded && !property.IsSetterIncluded)
+            //        {
+            //            SourceCode += " { get;}\n";
+            //        }
+            //        else
+            //        {
+            //            if (!property.IsGetterIncluded && property.IsSetterIncluded)
+            //            {
+            //                SourceCode += " { set;}\n";
+            //            }
+            //            else
+            //            {
+            //                SourceCode += "\n";
+            //            }
+            //        }
+            //    }
+            //}
             foreach (GeneratedMethod method in Methods)
             {
                 SourceCode += method.Encapsulation.ToString() + " ";

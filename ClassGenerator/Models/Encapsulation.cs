@@ -8,6 +8,7 @@ namespace ClassGenerator.Models
 {
     public enum Encapsulation
     {
+        Brak,
         Public,
         Private,
         Protected,

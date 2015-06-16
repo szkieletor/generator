@@ -35,12 +35,13 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <CheckBox Name="GetterCheckBox" Content="Getter"/>
+                <CheckBox Name="GetterCheckBox" Content="Getter" Checked="GetterCheckBox_Checked" Unchecked="GetterCheckBox_Unchecked"/>
                 <Label Grid.Row="1">Hermetyzacja</Label>
                 <ComboBox Name="GetterEncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="2" ToolTip="Wybierz z listy regułę hermetyzacji">
-                    <ComboBoxItem>Publiczna</ComboBoxItem>
-                    <ComboBoxItem>Prywatna</ComboBoxItem>
-                    <ComboBoxItem>Chroniona</ComboBoxItem>
+                    <ComboBoxItem>Public</ComboBoxItem>
+                    <ComboBoxItem>Private</ComboBoxItem>
+                    <ComboBoxItem>Protected</ComboBoxItem>
+                    <ComboBoxItem>Internal</ComboBoxItem>
                 </ComboBox>
             </Grid>
         </GroupBox>
@@ -54,12 +55,13 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <CheckBox Name="SetterCheckBox" Content="Setter"/>
+                <CheckBox Name="SetterCheckBox" Content="Setter" Checked="SetterCheckBox_Checked" Unchecked="SetterCheckBox_Unchecked"/>
                 <Label Grid.Row="1">Hermetyzacja</Label>
                 <ComboBox Name="SetterEncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="2" ToolTip="Wybierz z listy regułę hermetyzacji">
-                    <ComboBoxItem>Publiczna</ComboBoxItem>
-                    <ComboBoxItem>Prywatna</ComboBoxItem>
-                    <ComboBoxItem>Chroniona</ComboBoxItem>
+                    <ComboBoxItem>Public</ComboBoxItem>
+                    <ComboBoxItem>Private</ComboBoxItem>
+                    <ComboBoxItem>Protected</ComboBoxItem>
+                    <ComboBoxItem>Internal</ComboBoxItem>
                 </ComboBox>
 
             </Grid>
