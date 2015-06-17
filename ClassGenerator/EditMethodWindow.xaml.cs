@@ -31,6 +31,7 @@ namespace ClassGenerator
                 CurrentMethod = (GeneratedMethod)((MainWindow)Application.Current.MainWindow).ClassWindow.MethodViewWindow.MethodListView.SelectedItem;
             }
             MethodDetails.DataContext = CurrentMethod;
+            ParameterListView.ItemsSource = CurrentMethod.Parameters;
         }
 
         private void AddParameter_Click(object sender, RoutedEventArgs e)

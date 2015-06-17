@@ -18,6 +18,10 @@ namespace ClassGenerator.Models
         public ObservableCollection<GeneratedParameter> Parameters { get; set; }
         public string Name { get; set; }
 
+        public GeneratedMethod()
+        {
+            Parameters = new ObservableCollection<GeneratedParameter>();
+        }
         public string GetSourceCode()
         {
             string temp = string.Empty;
