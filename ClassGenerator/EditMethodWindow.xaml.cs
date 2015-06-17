@@ -26,9 +26,9 @@ namespace ClassGenerator
             InitializeComponent();
             EncapsulationComboBox.ItemsSource = Enum.GetValues(typeof(Encapsulation)).Cast<Encapsulation>();
             CurrentMethod = new GeneratedMethod();
-            if (((MainWindow)Application.Current.MainWindow).ClassWindow.MethodViewWindow.MethodList.SelectedIndex != -1)
+            if (((MainWindow)Application.Current.MainWindow).ClassWindow.MethodViewWindow.MethodListView.SelectedIndex != -1)
             {
-                CurrentMethod = (GeneratedMethod)((MainWindow)Application.Current.MainWindow).ClassWindow.MethodViewWindow.MethodList.SelectedItem;
+                CurrentMethod = (GeneratedMethod)((MainWindow)Application.Current.MainWindow).ClassWindow.MethodViewWindow.MethodListView.SelectedItem;
             }
             MethodDetails.DataContext = CurrentMethod;
         }

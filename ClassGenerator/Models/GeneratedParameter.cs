@@ -11,6 +11,11 @@ namespace ClassGenerator.Models
         public string Type { get; set; }
         public string Name { get; set; }
 
+        public override string ToString()
+        {
+            return Type + " " + Name;
+        }
+
         public string GetSourceCode()
         {
             string temp = string.Empty;

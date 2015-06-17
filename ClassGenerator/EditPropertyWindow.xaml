@@ -16,28 +16,40 @@
         </Grid.ColumnDefinitions>
         <Label>Nazwa właściwości</Label>
         <TextBox Name="PropertyName" Grid.Column="1" Style="{StaticResource StandardTextBox}"/>
-        <Label Grid.Row="1">Zwracana wartość</Label>
-        <ComboBox Name="ReturnValueComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="1" ToolTip="Wybierz z listy zwracaną wartość">
-            <ComboBoxItem>int</ComboBoxItem>
-            <ComboBoxItem>string</ComboBoxItem>
-            <ComboBoxItem>double</ComboBoxItem>
-            <ComboBoxItem>boolean</ComboBoxItem>
-            <ComboBoxItem>void</ComboBoxItem>
-            <ComboBoxItem Selected="ZwracanyTyp_Selected">Podaj zwracany typ...</ComboBoxItem>
-        </ComboBox>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label >Zwracana wartość</Label>
+            <ComboBox Name="ReturnValueComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="0" ToolTip="Wybierz z listy zwracaną wartość">
+                <ComboBoxItem>int</ComboBoxItem>
+                <ComboBoxItem>string</ComboBoxItem>
+                <ComboBoxItem>double</ComboBoxItem>
+                <ComboBoxItem>boolean</ComboBoxItem>
+                <ComboBoxItem>void</ComboBoxItem>
+            </ComboBox>
+            <CheckBox Name="OwnType" Grid.Row="1"  Content="Typ własny" Checked="OwnType_Checked" Unchecked="OwnType_Unchecked" VerticalAlignment="Center" ></CheckBox>
+            <TextBox Name="OwnTypeName" Grid.Row="1" Grid.Column="1" IsEnabled="False"  Style="{StaticResource StandardTextBox}"></TextBox>
+        </Grid>
         <GroupBox Header="Getter" Style="{StaticResource StandardGroupBox}" Grid.Row="2" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="47*"/>
+                    <ColumnDefinition Width="55*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <CheckBox Name="GetterCheckBox" Content="Getter" Checked="GetterCheckBox_Checked" Unchecked="GetterCheckBox_Unchecked"/>
-                <Label Grid.Row="1">Hermetyzacja</Label>
-                <ComboBox Name="GetterEncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="2" ToolTip="Wybierz z listy regułę hermetyzacji">
+                <CheckBox Name="GetterCheckBox" Content="Getter" Checked="GetterCheckBox_Checked" Unchecked="GetterCheckBox_Unchecked" Grid.ColumnSpan="2"/>
+                <Label Grid.Row="1" Grid.ColumnSpan="2">Hermetyzacja</Label>
+                <ComboBox Name="GetterEncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="2" Grid.Row="1" ToolTip="Wybierz z listy regułę hermetyzacji">
                     <ComboBoxItem>Public</ComboBoxItem>
                     <ComboBoxItem>Private</ComboBoxItem>
                     <ComboBoxItem>Protected</ComboBoxItem>
@@ -74,5 +86,5 @@
             <Button Name="SaveParameter" Style="{StaticResource StandardButton}" Content="Zatwierdź" Click="SaveParameter_Click"></Button>
             <Button Name="Cancel" Style="{StaticResource StandardButton}" Content="Anuluj" Grid.Column="1" Click="Cancel_Click" ></Button>
         </Grid>
-        </Grid>
+    </Grid>
 </Window>

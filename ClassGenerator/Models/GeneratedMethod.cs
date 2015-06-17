@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace ClassGenerator.Models
         public bool IsOverride { get; set; }
         public bool IsAbstract { get; set; }
         public string ReturnType { get; set; }
-        public List<GeneratedParameter> Parameters { get; set; }
+        public ObservableCollection<GeneratedParameter> Parameters { get; set; }
         public string Name { get; set; }
 
         public string GetSourceCode()
