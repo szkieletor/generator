@@ -10,6 +10,8 @@ namespace ClassGenerator.Models
     {
         public string Type { get; set; }
         public string Name { get; set; }
+        public bool IsOwnType { get; set; }
+
         public Encapsulation GetterEncapsulation { get; set; }
         public Encapsulation SetterEncapsulation { get; set; }
 

@@ -21,9 +21,8 @@ namespace ClassGenerator
     public partial class ClassWindow : Window
     {
         public string SourceCode;
-        GeneratedClass generatedClass;
         public GeneratedClass CurrentClass { get; set; }
-
+        public ParameterViewWindow ParameterViewWindow { get; set; }
         public MethodViewWindow MethodViewWindow { get; set; }
         public ClassWindow()
         {
@@ -76,7 +75,7 @@ namespace ClassGenerator
 
         private void ParameterViewButton_Click(object sender, RoutedEventArgs e)
         {
-            var ParameterViewWindow = new ParameterViewWindow();
+            ParameterViewWindow = new ParameterViewWindow();
             ParameterViewWindow.ToClassRef(CurrentClass);
             ParameterViewWindow.ShowDialog();
         }
