@@ -119,8 +119,27 @@ namespace ClassGenerator
 
         private void ZwracanyTyp_Selected(object sender, RoutedEventArgs e)
         {
-            var ParameterTypeInputWindow = new ParameterTypeInputWindow(this,propertyTemp);
+            var ParameterTypeInputWindow = new ParameterTypeInputWindow(this, propertyTemp);
             ParameterTypeInputWindow.ShowDialog();
+        }
+
+        private void OwnType_Checked(object sender, RoutedEventArgs e)
+        {
+            if(OwnType.IsChecked==true)
+            {
+                OwnTypeName.IsEnabled = true;
+                ReturnValueComboBox.IsEnabled = false;
+            }
+            
+        }
+
+        private void OwnType_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (OwnType.IsChecked == false)
+            {
+                OwnTypeName.IsEnabled = false;
+                ReturnValueComboBox.IsEnabled = true;
+            }
         }
 
         
