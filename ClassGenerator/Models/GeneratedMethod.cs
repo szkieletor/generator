@@ -14,7 +14,38 @@ namespace ClassGenerator.Models
         public bool IsOverride { get; set; }
         public bool IsAbstract { get; set; }
         public string ReturnType { get; set; }
-        public List<string> Parameters { get; set; }
+        public List<GeneratedParameter> Parameters { get; set; }
         public string Name { get; set; }
+
+        public string GetSourceCode()
+        {
+            string temp = string.Empty;
+            temp += Encapsulation + " ";
+            if (IsStatic)
+            {
+                temp += "static ";
+            }
+            if (IsSealed)
+            {
+                temp += "sealed ";
+            }
+            if (IsOverride)
+            {
+                temp += "override ";
+            }
+            if (IsAbstract)
+            {
+                temp += "abstract ";
+            }
+            temp += ReturnType + " " + Name + "(";
+            foreach(var item in Parameters)
+            {
+                temp += item.GetSourceCode() + ",";
+            }
+            if (Parameters != null)
+            temp = temp.Substring(0,temp.Length-1);
+            temp += " ) { \n\n}";
+            return temp;
+        }
     }
 }

@@ -17,5 +17,25 @@ namespace ClassGenerator.Models
         //{
         //    return "Type: "+this.Type + ", Name: " + this.Name;
         //}
+
+        public string GetSourceCode()
+        {
+            string temp = string.Empty;
+            temp += Type + " " + Name;
+            if(GetterEncapsulation != Encapsulation.Brak && SetterEncapsulation != Encapsulation.Brak)
+            {
+                temp += " { "+ GetterEncapsulation + " get;" + " " + SetterEncapsulation + " set; }";    
+            }
+            if (GetterEncapsulation != Encapsulation.Brak && SetterEncapsulation == Encapsulation.Brak)
+            {
+                temp += " { " + GetterEncapsulation + "get; }";
+            }
+
+            if (GetterEncapsulation == Encapsulation.Brak && SetterEncapsulation != Encapsulation.Brak)
+            {
+                temp += " { " + SetterEncapsulation + "set; }";
+            }
+            return temp;
+        }
     }
 }

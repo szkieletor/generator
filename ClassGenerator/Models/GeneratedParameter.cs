@@ -10,5 +10,14 @@ namespace ClassGenerator.Models
     {
         public string Type { get; set; }
         public string Name { get; set; }
+
+        public string GetSourceCode()
+        {
+            string temp = string.Empty;
+            temp += Type + " " + Name;
+            return temp;
+        }
     }
+
 }
+
