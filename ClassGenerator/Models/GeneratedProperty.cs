@@ -24,16 +24,20 @@ namespace ClassGenerator.Models
             temp += Type + " " + Name;
             if(GetterEncapsulation != Encapsulation.Brak && SetterEncapsulation != Encapsulation.Brak)
             {
-                temp += " { "+ GetterEncapsulation + " get;" + " " + SetterEncapsulation + " set; }";    
+                temp += " { " + GetterEncapsulation + " get;" + " " + SetterEncapsulation + " set;}\n";    
             }
             if (GetterEncapsulation != Encapsulation.Brak && SetterEncapsulation == Encapsulation.Brak)
             {
-                temp += " { " + GetterEncapsulation + "get; }";
+                temp += " { " + GetterEncapsulation + " get;}\n";
             }
 
             if (GetterEncapsulation == Encapsulation.Brak && SetterEncapsulation != Encapsulation.Brak)
             {
-                temp += " { " + SetterEncapsulation + "set; }";
+                temp += " { " + SetterEncapsulation + " set;}\n";
+            }
+            if (GetterEncapsulation == Encapsulation.Brak && SetterEncapsulation == Encapsulation.Brak)
+            {
+                temp += ";\n";
             }
             return temp;
         }

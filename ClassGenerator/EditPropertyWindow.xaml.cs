@@ -26,6 +26,7 @@ namespace ClassGenerator
         public void GetProperty (GeneratedProperty prop)
         {
             propertyTemp = prop;
+            SaveParameter.Visibility = Visibility.Collapsed;
         }
         public void ToClassRef(GeneratedClass ClassRef)
         {
@@ -34,7 +35,10 @@ namespace ClassGenerator
         public EditPropertyWindow()
         {
             InitializeComponent();
-            propertyTemp = new GeneratedProperty();
+            if (propertyTemp == null)
+            {
+                propertyTemp = new GeneratedProperty();
+            }
             GetterEncapsulationComboBox.IsEnabled = false;
             SetterEncapsulationComboBox.IsEnabled = false;
             Binding NameB = new Binding();
@@ -53,7 +57,7 @@ namespace ClassGenerator
             Binding SetterEncapsulationB = new Binding("SetterEncapsulation");
             SetterEncapsulationB.Source = propertyTemp;
             SetterEncapsulationB.Mode = BindingMode.TwoWay;
-            SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB); 
+            SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB);
         }
 
         private void SaveParameter_Click(object sender, RoutedEventArgs e)

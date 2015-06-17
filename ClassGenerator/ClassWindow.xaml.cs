@@ -78,7 +78,7 @@ namespace ClassGenerator
         private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)
         {
            string costam = CurrentClass.GetSourceCode();
-           
+           GeneratedClassTextBox.AppendText(costam);
         }
     }
 }

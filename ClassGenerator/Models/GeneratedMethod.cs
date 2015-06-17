@@ -42,14 +42,14 @@ namespace ClassGenerator.Models
             {
                 temp += "abstract ";
             }
-            temp += ReturnType + " " + Name + "(";
+            temp += ReturnType + " " + Name + "( ";
             foreach(var item in Parameters)
             {
                 temp += item.GetSourceCode() + ",";
             }
             if (Parameters != null)
             temp = temp.Substring(0,temp.Length-1);
-            temp += " ) { \n\n}";
+            temp += " ) {\n\n}\n";
             return temp;
         }
     }
