@@ -33,19 +33,39 @@ namespace ClassGenerator
 
             if (mainWindow.ClassListView.SelectedItem != null) //Edit
             {
-                Binding classBinding = new Binding();
-                classBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
-                classBinding.Path = new PropertyPath("Name");
-                classBinding.Mode = BindingMode.TwoWay;
-                ClassName.SetBinding(TextBox.TextProperty, classBinding);
+                Binding nameBinding = new Binding();
+                nameBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
+                nameBinding.Path = new PropertyPath("Name");
+                nameBinding.Mode = BindingMode.TwoWay;
+                ClassName.SetBinding(TextBox.TextProperty, nameBinding);
+
+                Binding encapsulationBinding = new Binding("Encapsulation");
+                encapsulationBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
+                encapsulationBinding.Mode = BindingMode.TwoWay;
+                EncapsulationComboBox.SetBinding(ComboBox.TextProperty, encapsulationBinding);
+
+                Binding abstractBinding = new Binding("IsAbstract");
+                abstractBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
+                abstractBinding.Mode = BindingMode.TwoWay;
+                IsAbstract.SetBinding(CheckBox.IsCheckedProperty, abstractBinding);
             }
             else
             {
-                Binding classBinding = new Binding();
-                classBinding.Source = CurrentClass;
-                classBinding.Path = new PropertyPath("Name");
-                classBinding.Mode = BindingMode.TwoWay;
-                ClassName.SetBinding(TextBox.TextProperty, classBinding);
+                Binding nameBinding = new Binding();
+                nameBinding.Source = CurrentClass;
+                nameBinding.Path = new PropertyPath("Name");
+                nameBinding.Mode = BindingMode.TwoWay;
+                ClassName.SetBinding(TextBox.TextProperty, nameBinding);
+
+                Binding encapsulationBinding = new Binding("Encapsulation");
+                encapsulationBinding.Source = CurrentClass;
+                encapsulationBinding.Mode = BindingMode.TwoWay;
+                EncapsulationComboBox.SetBinding(ComboBox.TextProperty, encapsulationBinding);
+
+                Binding abstractBinding = new Binding("IsAbstract");
+                abstractBinding.Source = CurrentClass;
+                abstractBinding.Mode = BindingMode.TwoWay;
+                IsAbstract.SetBinding(CheckBox.IsCheckedProperty, abstractBinding);
         }
         }
         private void MethodViewButton_Click(object sender, RoutedEventArgs e)
