@@ -10,7 +10,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label>Lista metod</Label>
-        <ListView Name="MethodListView" Margin="5,25"></ListView>
+        <ListView Name="MethodListView" Style="{StaticResource ResourceKey=StandardListView}" Margin="5,25"></ListView>
         <!-- <Grid.Column="1" >
             <Button Name="AddMethod" Content="Dodaj" Margin="15"></Button>
             <Button Name="RemoveMethod" Content="Usun" Margin="15"></Button>

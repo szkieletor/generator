@@ -21,7 +21,7 @@
                 <Button Name="CloseButton" Grid.Column="2" Grid.Row="1" Style="{StaticResource StandardButton}" Click="CloseButton_Click">Zamknij</Button>
                 <Button Name="ShowButton" Grid.Column="2" Style="{StaticResource StandardButton}" Click="ShowButton_Click">Pokaż</Button>
             </Grid>
-            <ListView x:Name="ClassListView"  Width="auto"></ListView>
+            <ListView x:Name="ClassListView" Style="{StaticResource StandardListView}" Width="auto"></ListView>
 
         </DockPanel>
     </Grid>

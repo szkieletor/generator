@@ -41,7 +41,7 @@
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             
-            <ListView MinHeight="50" MinWidth="200" Name="ParameterListView"></ListView>
+            <ListView MinHeight="50" Style="{StaticResource StandardListView}" MinWidth="200" Name="ParameterListView"></ListView>
             <Grid Grid.Row="1" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
