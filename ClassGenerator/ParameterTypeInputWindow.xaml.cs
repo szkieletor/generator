@@ -20,7 +20,7 @@ namespace ClassGenerator
     /// </summary>
     public partial class ParameterTypeInputWindow : Window
     {
-        EditPropertyWindow Owner;
+        EditPropertyWindow owner;
         GeneratedProperty GenPam;
 
         public ParameterTypeInputWindow()
@@ -29,7 +29,7 @@ namespace ClassGenerator
         }
         public ParameterTypeInputWindow(EditPropertyWindow epw, GeneratedProperty gp)
         {
-            this.Owner = epw;
+            this.owner = epw;
             this.GenPam = gp;
             InitializeComponent();
         }
@@ -37,8 +37,8 @@ namespace ClassGenerator
         {
             if (Type.Text != null)
             {
-                Owner.ReturnValueComboBox.Items.Insert(Owner.ReturnValueComboBox.Items.Count - 1, Type.Text);
-                GenPam.Type = Type.Text;
+                owner.ReturnValueComboBox.Items.Insert(owner.ReturnValueComboBox.Items.Count - 1, Type.Text);
+                //GenPam.Type = Type.Text;
                 this.Close();
             }
             else

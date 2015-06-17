@@ -65,21 +65,25 @@ namespace ClassGenerator
             }
             else
             {
-                if(PropertyName.Text==null && ReturnValueComboBox.SelectedItem==null)
+                if (PropertyName.Text == null && ReturnValueComboBox.SelectedItem == null)
                 {
-                    MessageBox.Show("Pola nazwy i zwracanego typu nie mogą być puste","Brak informacji o parametrze",MessageBoxButton.OK,MessageBoxImage.Error);
+                    MessageBox.Show("Pola nazwy i zwracanego typu nie mogą być puste", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-                if(PropertyName.Text==null)
+                else
                 {
-                    MessageBox.Show("Nazwa parametru nie może być pusta","Brak informacji o parametrze",MessageBoxButton.OK,MessageBoxImage.Error);
-                    return;
+                    if (PropertyName.Text == null)
+                    {
+                        MessageBox.Show("Nazwa parametru nie może być pusta", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Parametr musi mieć jakiś konkretny zwracany typ", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
                 }
-                if(ReturnValueComboBox==null)
-                {
-                    MessageBox.Show("Parametr musi mieć jakiś konkretny zwracany typ","Brak informacji o parametrze",MessageBoxButton.OK,MessageBoxImage.Error);
-                    return;
-                }
+                
             }
         }
 

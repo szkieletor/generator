@@ -1,0 +1,25 @@
+﻿<Window x:Class="ClassGenerator.ParameterTypeInputWindow" Style="{StaticResource StandardWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize"
+        Title="ParameterTypeInputWindow" Height="160" Width="325">
+    <Grid Style="{StaticResource StandardGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Zwracany typ :"></Label>
+        <TextBox Name="Type" Grid.Column="1" Style="{StaticResource StandardTextBox}"></TextBox>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="AddTypeInList" Style="{StaticResource StandardButton}" Content="Zapisz" Click="AddTypeInList_Click" Grid.Column="0"></Button>
+            <Button Name="ExitTypeInList" Style="{StaticResource StandardButton}" Content="Anuluj" Click="ExitTypeInList_Click" Grid.Column="1"></Button>
+        </Grid>
+    </Grid>
+</Window>
