@@ -80,22 +80,10 @@
                                     <GradientStop Color="LightCyan" Offset="0.7"></GradientStop>
                                 </LinearGradientBrush>
                             </Border.Background>
-                            <ScrollViewer Focusable="False">
-                                <ItemsPresenter Margin="2"/>
-                            </ScrollViewer>
+                            
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
-                <!--<Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ListView}">
-                        <Border Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
-                            CornerRadius="5 5 5 5" Background="{TemplateBinding Background}"
-                            TextBlock.Foreground="Black">
-                            <ContentPresenter RecognizesAccessKey="True"
-                                          Margin="{TemplateBinding Padding}" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>-->
             </Setter>
             <Style.Triggers>
                 <Trigger Property="Background">
