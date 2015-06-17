@@ -53,16 +53,41 @@ namespace ClassGenerator
             Binding SetterEncapsulationB = new Binding("SetterEncapsulation");
             SetterEncapsulationB.Source = propertyTemp;
             SetterEncapsulationB.Mode = BindingMode.TwoWay;
-            SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB);
-            
-            
+            SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB); 
         }
 
         private void SaveParameter_Click(object sender, RoutedEventArgs e)
         {
-            classRef.Properties.Add(propertyTemp);
+            if(PropertyName.Text!=null && ReturnValueComboBox.SelectedItem!=null)
+            {
+                classRef.Properties.Add(propertyTemp);
+                this.Close();
+            }
+            else
+            {
+                if(PropertyName.Text==null && ReturnValueComboBox.SelectedItem==null)
+                {
+                    MessageBox.Show("Pola nazwy i zwracanego typu nie mogą być puste","Brak informacji o parametrze",MessageBoxButton.OK,MessageBoxImage.Error);
+                    return;
+                }
+                if(PropertyName.Text==null)
+                {
+                    MessageBox.Show("Nazwa parametru nie może być pusta","Brak informacji o parametrze",MessageBoxButton.OK,MessageBoxImage.Error);
+                    return;
+                }
+                if(ReturnValueComboBox==null)
+                {
+                    MessageBox.Show("Parametr musi mieć jakiś konkretny zwracany typ","Brak informacji o parametrze",MessageBoxButton.OK,MessageBoxImage.Error);
+                    return;
+                }
+            }
         }
 
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            
+        }
         private void SetterCheckBox_Checked(object sender, RoutedEventArgs e)
         {
                 SetterEncapsulationComboBox.IsEnabled = true;
@@ -87,6 +112,14 @@ namespace ClassGenerator
                 GetterEncapsulationComboBox.IsEnabled = false;
                 
         }
+
+        private void ZwracanyTyp_Selected(object sender, RoutedEventArgs e)
+        {
+            var ParameterTypeInputWindow = new ParameterTypeInputWindow(this,propertyTemp);
+            ParameterTypeInputWindow.ShowDialog();
+        }
+
+        
 
        
     }

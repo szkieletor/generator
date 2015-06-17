@@ -1,4 +1,4 @@
-﻿<Window x:Class="ClassGenerator.EditMethodWindow"
+﻿<Window x:Class="ClassGenerator.EditMethodWindow" Style="{StaticResource StandardWindow}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="EditMethodWindow" Height="300" Width="350" MinHeight="150" MaxHeight="350" MinWidth="250" MaxWidth="400">
@@ -30,7 +30,7 @@
             <ComboBoxItem>Podaj zwracany typ...</ComboBoxItem>
         </ComboBox>
         <CheckBox Content="Abstrakcyjna" IsChecked="{Binding Path=IsAbstract}" Grid.ColumnSpan="2" Grid.Row="3"/>
-        <GroupBox Header="Parametry" Grid.Row="4" Grid.ColumnSpan="2">
+        <GroupBox Header="Parametry" Style="{StaticResource StandardGroupBox}" Grid.Row="4" Grid.ColumnSpan="2">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>

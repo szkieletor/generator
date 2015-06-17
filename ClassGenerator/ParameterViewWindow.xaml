@@ -1,4 +1,4 @@
-﻿<Window x:Class="ClassGenerator.ParameterViewWindow"
+﻿<Window x:Class="ClassGenerator.ParameterViewWindow" Style="{StaticResource StandardWindow}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Lista parametrow" Height="270" Width="500" MinHeight="270" MinWidth="400">
@@ -12,21 +12,16 @@
         <Label>Lista parametrów</Label>
         <ListView x:Name="ParameterViewList" Width="auto">
             <ListView.View>
-
                 <GridView ColumnHeaderToolTip="Typy i nazwy zmiennych">
-
                     <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=Type}" 
                       Header="Typ" Width="90"/>
-
                     <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=Name}" 
                      Header="Nazwa" Width="90"/>
-
                     <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=GetterEncapsulation}" 
                      Header="Getter" Width="90"/>
-
                     <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=SetterEncapsulation}" 
                      Header="Setter" Width="90"/>

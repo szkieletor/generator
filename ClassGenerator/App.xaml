@@ -135,15 +135,28 @@
                     <Setter Property="Background">
                         <Setter.Value>
                             <LinearGradientBrush>
-                                <GradientStop Color="#33ff99" Offset="0"></GradientStop>
-                                <GradientStop Color="#44ff88" Offset="1"></GradientStop>
+                                <GradientStop Color="#ffffff" Offset="0"></GradientStop>
+                                <GradientStop Color="#33ff99" Offset="1"></GradientStop>
                             </LinearGradientBrush>
                         </Setter.Value>
                     </Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
+        <!--GroupBox-->
+        <Style TargetType="GroupBox" x:Key="StandardGroupBox">
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#375233" Offset="0"></GradientStop>
+                        <GradientStop Color="#438165" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="0.5"></Setter>
+            <Setter Property="Opacity" Value="1"></Setter>
+            <Setter Property="OpacityMask" Value="#395435"></Setter>
+        </Style>
         <!--ComboBox-->
         <Style TargetType="ComboBox" x:Key="StandardComboBox">
             <Setter Property="Margin" Value="5"/>

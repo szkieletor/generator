@@ -1,4 +1,4 @@
-﻿<Window x:Class="ClassGenerator.MethodViewWindow"
+﻿<Window x:Class="ClassGenerator.MethodViewWindow" Style="{StaticResource StandardWindow}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Lista metod" Height="270" Width="500" MinHeight="270" MinWidth="400">

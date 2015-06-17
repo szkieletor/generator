@@ -90,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ParameterTypeInputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ParameterViewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,9 @@
     <Compile Include="Models\GeneratedMethod.cs" />
     <Compile Include="Models\GeneratedParameter.cs" />
     <Compile Include="Models\GeneratedProperty.cs" />
+    <Compile Include="ParameterTypeInputWindow.xaml.cs">
+      <DependentUpon>ParameterTypeInputWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ParameterViewWindow.xaml.cs">
       <DependentUpon>ParameterViewWindow.xaml</DependentUpon>
     </Compile>

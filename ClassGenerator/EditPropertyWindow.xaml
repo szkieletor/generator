@@ -1,4 +1,4 @@
-﻿<Window x:Class="ClassGenerator.EditPropertyWindow"
+﻿<Window x:Class="ClassGenerator.EditPropertyWindow" Style="{StaticResource StandardWindow}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="EditPropertyWindow" Height="300" Width="350" MinWidth="350">
@@ -23,9 +23,9 @@
             <ComboBoxItem>double</ComboBoxItem>
             <ComboBoxItem>boolean</ComboBoxItem>
             <ComboBoxItem>void</ComboBoxItem>
-            <ComboBoxItem>Podaj zwracany typ...</ComboBoxItem>
+            <ComboBoxItem Selected="ZwracanyTyp_Selected">Podaj zwracany typ...</ComboBoxItem>
         </ComboBox>
-        <GroupBox Header="Getter" Grid.Row="2" Grid.ColumnSpan="2">
+        <GroupBox Header="Getter" Style="{StaticResource StandardGroupBox}" Grid.Row="2" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -45,7 +45,7 @@
                 </ComboBox>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Setter" Grid.ColumnSpan="2" Grid.Row="3">
+        <GroupBox Header="Setter" Style="{StaticResource StandardGroupBox}" Grid.ColumnSpan="2" Grid.Row="3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -72,7 +72,7 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Name="SaveParameter" Style="{StaticResource StandardButton}" Content="Zatwierdź" Click="SaveParameter_Click"></Button>
-            <Button Name="Cancel" Style="{StaticResource StandardButton}" Content="Anuluj" Grid.Column="1" ></Button>
+            <Button Name="Cancel" Style="{StaticResource StandardButton}" Content="Anuluj" Grid.Column="1" Click="Cancel_Click" ></Button>
         </Grid>
         </Grid>
 </Window>
