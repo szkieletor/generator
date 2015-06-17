@@ -1,6 +1,7 @@
 ﻿using ClassGenerator.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,13 @@ namespace ClassGenerator
     {
         public EditMethodWindow EditMethodWindow { get; set; }
 
+        public ObservableCollection<GeneratedMethod> CurrentMethodList { get; set;}
 
         public MethodViewWindow()
         {
             InitializeComponent();
-            MethodList.ItemsSource = ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.Methods;
+            CurrentMethodList = ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.Methods;
+            MethodListView.ItemsSource = CurrentMethodList;
         }
 
         private void AddMethod_Click(object sender, RoutedEventArgs e)

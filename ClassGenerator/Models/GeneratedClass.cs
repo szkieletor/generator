@@ -85,10 +85,10 @@ namespace ClassGenerator.Models
                     SourceCode += "Sealed ";
                 }
                 SourceCode += method.ReturnType + " " + method.Name + "(";
-                foreach (string Parameter in method.Parameters)
-                {
-                    SourceCode = Parameter + ",";
-                }
+                //foreach (string Parameter in method.Parameters)
+                //{
+                //    SourceCode = Parameter + ",";
+                //}
                 SourceCode += ")\n";
             }
             SourceCode += "}\n";
