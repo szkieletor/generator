@@ -35,60 +35,104 @@ namespace ClassGenerator
         public EditPropertyWindow()
         {
             InitializeComponent();
+            var parameterViewWindow = (ParameterViewWindow)((MainWindow)Application.Current.MainWindow).ClassWindow.ParameterViewWindow;
             if (propertyTemp == null)
             {
                 propertyTemp = new GeneratedProperty();
             }
             GetterEncapsulationComboBox.IsEnabled = false;
             SetterEncapsulationComboBox.IsEnabled = false;
-            Binding NameB = new Binding();
-            NameB.Source = propertyTemp;
-            NameB.Path = new PropertyPath("Name");
-            NameB.Mode = BindingMode.TwoWay;
-            PropertyName.SetBinding(TextBox.TextProperty, NameB);
-            Binding TypeB = new Binding("Type");
-            TypeB.Source = propertyTemp;
-            TypeB.Mode = BindingMode.TwoWay;
-            ReturnValueComboBox.SetBinding(ComboBox.TextProperty, TypeB);
-            Binding GetterEncapsulationB = new Binding("GetterEncapsulation");
-            GetterEncapsulationB.Source = propertyTemp;
-            GetterEncapsulationB.Mode = BindingMode.TwoWay;
-            GetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, GetterEncapsulationB);
-            Binding SetterEncapsulationB = new Binding("SetterEncapsulation");
-            SetterEncapsulationB.Source = propertyTemp;
-            SetterEncapsulationB.Mode = BindingMode.TwoWay;
-            SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB);
+            if (parameterViewWindow.ParameterViewList.SelectedItem == null)
+            {
+                Binding NameB = new Binding();
+                NameB.Source = propertyTemp;
+                NameB.Path = new PropertyPath("Name");
+                NameB.Mode = BindingMode.TwoWay;
+                PropertyName.SetBinding(TextBox.TextProperty, NameB);
+                Binding TypeB = new Binding("Type");
+                TypeB.Source = propertyTemp;
+                TypeB.Mode = BindingMode.TwoWay;
+                ReturnValueComboBox.SetBinding(ComboBox.TextProperty, TypeB);
+                Binding GetterEncapsulationB = new Binding("GetterEncapsulation");
+                GetterEncapsulationB.Source = propertyTemp;
+                GetterEncapsulationB.Mode = BindingMode.TwoWay;
+                GetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, GetterEncapsulationB);
+                Binding SetterEncapsulationB = new Binding("SetterEncapsulation");
+                SetterEncapsulationB.Source = propertyTemp;
+                SetterEncapsulationB.Mode = BindingMode.TwoWay;
+                SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB);
+                Binding IsOwnTypeB = new Binding("IsOwnType");
+                IsOwnTypeB.Source = propertyTemp;
+                IsOwnTypeB.Mode = BindingMode.TwoWay;
+                OwnType.SetBinding(CheckBox.IsCheckedProperty, IsOwnTypeB);
+                Binding OwnTypeB = new Binding("Type");
+                OwnTypeB.Source = parameterViewWindow.ParameterViewList.SelectedItem;
+                OwnTypeB.Mode = BindingMode.TwoWay;
+                OwnTypeName.SetBinding(TextBox.TextProperty, OwnTypeB);
+            }
+            else
+            {
+                Binding NameB = new Binding();
+                NameB.Source = parameterViewWindow.ParameterViewList.SelectedItem;
+                NameB.Path = new PropertyPath("Name");
+                NameB.Mode = BindingMode.TwoWay;
+                PropertyName.SetBinding(TextBox.TextProperty, NameB);
+                Binding TypeB = new Binding("Type");
+                TypeB.Source = parameterViewWindow.ParameterViewList.SelectedItem;
+                TypeB.Mode = BindingMode.TwoWay;
+                ReturnValueComboBox.SetBinding(ComboBox.TextProperty, TypeB);
+                Binding GetterEncapsulationB = new Binding("GetterEncapsulation");
+                GetterEncapsulationB.Source = parameterViewWindow.ParameterViewList.SelectedItem;
+                GetterEncapsulationB.Mode = BindingMode.TwoWay;
+                GetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, GetterEncapsulationB);
+                Binding SetterEncapsulationB = new Binding("SetterEncapsulation");
+                SetterEncapsulationB.Source = parameterViewWindow.ParameterViewList.SelectedItem;
+                SetterEncapsulationB.Mode = BindingMode.TwoWay;
+                SetterEncapsulationComboBox.SetBinding(ComboBox.TextProperty, SetterEncapsulationB);
+                Binding IsOwnTypeB = new Binding("IsOwnType");
+                IsOwnTypeB.Source = parameterViewWindow.ParameterViewList.SelectedItem;
+                IsOwnTypeB.Mode = BindingMode.TwoWay;
+                OwnType.SetBinding(CheckBox.IsCheckedProperty, IsOwnTypeB);
+                Binding OwnTypeB = new Binding("Type");
+                OwnTypeB.Source = parameterViewWindow.ParameterViewList.SelectedItem;
+                OwnTypeB.Mode = BindingMode.TwoWay;
+                OwnTypeName.SetBinding(TextBox.TextProperty, OwnTypeB);
+            }
         }
 
         private void SaveParameter_Click(object sender, RoutedEventArgs e)
         {
-            if(PropertyName.Text!=null && ReturnValueComboBox.SelectedItem!=null)
+            if(PropertyName.Text!=null /*&& ReturnValueComboBox.SelectedItem!=null*/)
             {
+                if(OwnType.IsChecked == true && OwnTypeName.Text != string.Empty)
+                {
+                    propertyTemp.Type = OwnTypeName.Text;
+                }
                 classRef.Properties.Add(propertyTemp);
                 this.Close();
             }
-            else
-            {
-                if (PropertyName.Text == null && ReturnValueComboBox.SelectedItem == null)
-                {
-                    MessageBox.Show("Pola nazwy i zwracanego typu nie mogą być puste", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-                else
-                {
-                    if (PropertyName.Text == null)
-                    {
-                        MessageBox.Show("Nazwa parametru nie może być pusta", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
-                        return;
-                    }
-                    else 
-                    {
-                        MessageBox.Show("Parametr musi mieć jakiś konkretny zwracany typ", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
-                        return;
-                    }
-                }
+            //else
+            //{
+            //    if (PropertyName.Text == null && ReturnValueComboBox.SelectedItem == null)
+            //    {
+            //        MessageBox.Show("Pola nazwy i zwracanego typu nie mogą być puste", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        if (PropertyName.Text == null)
+            //        {
+            //            MessageBox.Show("Nazwa parametru nie może być pusta", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
+            //            return;
+            //        }
+            //        else 
+            //        {
+            //            MessageBox.Show("Parametr musi mieć jakiś konkretny zwracany typ", "Brak informacji o parametrze", MessageBoxButton.OK, MessageBoxImage.Error);
+            //            return;
+            //        }
+            //    }
                 
-            }
+            //}
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -119,12 +163,6 @@ namespace ClassGenerator
             propertyTemp.GetterEncapsulation = Encapsulation.Brak;
                 GetterEncapsulationComboBox.IsEnabled = false;
                 
-        }
-
-        private void ZwracanyTyp_Selected(object sender, RoutedEventArgs e)
-        {
-            var ParameterTypeInputWindow = new ParameterTypeInputWindow(this, propertyTemp);
-            ParameterTypeInputWindow.ShowDialog();
         }
 
         private void OwnType_Checked(object sender, RoutedEventArgs e)
