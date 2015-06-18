@@ -1,0 +1,25 @@
+﻿<Window x:Class="ClassGenerator.ShowSourceCodeWindow" Style="{StaticResource StandardWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ShowSourceCodeWindow" Height="300" Width="300">
+    <Grid Style="{StaticResource StandardGrid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Name="Save" Style="{StaticResource StandardButton}" Content="Zapisz" Grid.Row="0" Click="Save_Click"></Button>
+            <Button Name="Return" Style="{StaticResource StandardButton}" Content="Powrót" Grid.Row="1" Click="Return_Click"></Button>
+        </Grid>
+        <RichTextBox Name="SourceCodeTextBox" Grid.Column="1" Grid.RowSpan="2"></RichTextBox>
+    </Grid>
+    
+</Window>
