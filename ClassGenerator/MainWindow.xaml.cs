@@ -67,8 +67,8 @@ namespace ClassGenerator
         private void ShowButton_Click(object sender, RoutedEventArgs e)
         {
             
-            ClassWindow = new ClassWindow();
-            ClassWindow.ShowDialog();
+            var ShowClassWindow = new ShowSourceCodeWindow();
+            ShowClassWindow.ShowDialog();
         }
     }
 }
