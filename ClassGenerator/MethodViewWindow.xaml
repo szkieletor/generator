@@ -6,11 +6,26 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="380"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label>Lista metod</Label>
-        <ListView Name="MethodListView"  Margin="5,25"></ListView>
+        <ListView Name="MethodListView"  Width="auto" Margin="25,25,15,25">
+            <ListView.View>
+                <GridView ColumnHeaderToolTip="Metody">
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Encapsulation}" 
+                     Header="Parametry" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=ReturnType}" 
+                      Header="Zwracany Typ" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Name}" 
+                     Header="Nazwa" Width="110"/>
+                    
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
         <!-- <Grid.Column="1" >
             <Button Name="AddMethod" Content="Dodaj" Margin="15"></Button>
             <Button Name="RemoveMethod" Content="Usun" Margin="15"></Button>

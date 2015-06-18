@@ -122,7 +122,7 @@ namespace ClassGenerator
 
         private void EncapsulationComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CurrentClass.Encapsulation = EncapsulationComboBox.Text;
+            //CurrentClass.Encapsulation = EncapsulationComboBox.Text;
             string codeTemp = CurrentClass.GetSourceCode();
             GeneratedClassTextBox.Document.Blocks.Clear();
             GeneratedClassTextBox.AppendText(codeTemp);

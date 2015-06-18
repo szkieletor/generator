@@ -49,6 +49,9 @@ namespace ClassGenerator
         private void AcceptMethod_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.Methods.Add(CurrentMethod);
+            string codeTemp = ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.GetSourceCode();
+            ((MainWindow)Application.Current.MainWindow).ClassWindow.GeneratedClassTextBox.Document.Blocks.Clear();
+            ((MainWindow)Application.Current.MainWindow).ClassWindow.GeneratedClassTextBox.AppendText(codeTemp);
             Close();
         }
 
