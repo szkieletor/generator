@@ -32,19 +32,19 @@ namespace ClassGenerator
             CurrentMethodList = ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.Methods;
             MethodListView.ItemsSource = CurrentMethodList;
         }
-
         private void AddMethod_Click(object sender, RoutedEventArgs e)
         {
             EditMethodWindow = new EditMethodWindow();
             EditMethodWindow.Show();
         }
-
         private void EditMethod_Click(object sender, RoutedEventArgs e)
         {
-            EditMethodWindow = new EditMethodWindow();
-            EditMethodWindow.Show();
+            if (MethodListView.SelectedIndex!=-1)
+            {
+                EditMethodWindow = new EditMethodWindow();
+                EditMethodWindow.Show();
+            }
         }
-
         private void RemoveMethod_Click(object sender, RoutedEventArgs e)
         {
             if (MethodListView.SelectedIndex != -1)

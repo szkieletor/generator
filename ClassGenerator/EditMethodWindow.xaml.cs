@@ -42,8 +42,11 @@ namespace ClassGenerator
 
         private void EditParameter_Click(object sender, RoutedEventArgs e)
         {
-            var parameterMethodWindow = new ParameterMethodWindow();
-            parameterMethodWindow.ShowDialog();
+            if (ParameterListView.SelectedIndex != -1)
+            {
+                var parameterMethodWindow = new ParameterMethodWindow();
+                parameterMethodWindow.ShowDialog();
+            }
         }
 
         private void AcceptMethod_Click(object sender, RoutedEventArgs e)

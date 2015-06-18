@@ -44,7 +44,7 @@
             <Button Name="AddParameter" Style="{StaticResource ViewButton}" Content="Dodaj" Margin="0,35,15,0" Padding="5" Grid.Row="0" ToolTip="Otwiera okienko tworzenia nowego pola" Click="AddParameter_Click"></Button>
             <Button Name="RemoveParameter" Style="{StaticResource ViewButton}" Content="Usun" Margin="0,15,15,0" Padding="5" Grid.Row="1" ToolTip="Usuwa zaznaczone pola z listy" Click="RemoveParameter_Click"></Button>
             <Button Name="EditParameter" Style="{StaticResource ViewButton}" Content="Edytuj" Margin="0,15,15,0" Padding="5" Grid.Row="2" ToolTip="W celu zmiany składowych pola wybierz tę opcję" Click="EditParameter_Click"></Button>
-            <Button Name="Back" Style="{StaticResource ViewButton}" Content="Powrót" Margin="0,15,15,15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście pól"></Button>
+            <Button Name="Back" Style="{StaticResource ViewButton}" Content="Powrót" Margin="0,15,15,15" Padding="5" Grid.Row="3" ToolTip="Zapisuje wszystkie dokonane zmiany na liście pól" Click="Back_Click"></Button>
         </Grid>
     </Grid>
 </Window>

@@ -107,6 +107,7 @@ namespace ClassGenerator
 
         private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)
         {
+           GeneratedClassTextBox.Document.Blocks.Clear();
            string codeTemp = CurrentClass.GetSourceCode();
            GeneratedClassTextBox.AppendText(codeTemp);
         }

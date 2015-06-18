@@ -41,8 +41,11 @@ namespace ClassGenerator
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            ClassWindow = new ClassWindow();
-            ClassWindow.ShowDialog();
+            if(ClassListView.SelectedIndex!=-1)
+            {
+                ClassWindow = new ClassWindow();
+                ClassWindow.ShowDialog();
+            }
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -66,7 +69,6 @@ namespace ClassGenerator
 
         private void ShowButton_Click(object sender, RoutedEventArgs e)
         {
-            
             var ShowClassWindow = new ShowSourceCodeWindow();
             ShowClassWindow.ShowDialog();
         }
