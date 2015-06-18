@@ -23,6 +23,7 @@ namespace ClassGenerator
         GeneratedClass classRef;
         GeneratedProperty propertyTemp {get; set;}
 
+        ParameterViewWindow parameterViewWindow;
         public void GetProperty (GeneratedProperty prop)
         {
             propertyTemp = prop;
@@ -35,7 +36,7 @@ namespace ClassGenerator
         public EditPropertyWindow()
         {
             InitializeComponent();
-            var parameterViewWindow = (ParameterViewWindow)((MainWindow)Application.Current.MainWindow).ClassWindow.ParameterViewWindow;
+            parameterViewWindow = (ParameterViewWindow)((MainWindow)Application.Current.MainWindow).ClassWindow.ParameterViewWindow;
             if (propertyTemp == null)
             {
                 propertyTemp = new GeneratedProperty();
@@ -106,9 +107,14 @@ namespace ClassGenerator
             {
                 if(OwnType.IsChecked == true && OwnTypeName.Text != string.Empty)
                 {
+
                     propertyTemp.Type = OwnTypeName.Text;
                 }
                 classRef.Properties.Add(propertyTemp);
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                string codeTemp = mainWindow.ClassWindow.CurrentClass.GetSourceCode();
+                mainWindow.ClassWindow.GeneratedClassTextBox.Document.Blocks.Clear();
+                mainWindow.ClassWindow.GeneratedClassTextBox.AppendText(codeTemp);
                 this.Close();
             }
             //else
@@ -137,6 +143,14 @@ namespace ClassGenerator
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
+            if (parameterViewWindow.ParameterViewList.SelectedItem != null)
+            {
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+
+                string codeTemp = mainWindow.ClassWindow.CurrentClass.GetSourceCode();
+                mainWindow.ClassWindow.GeneratedClassTextBox.Document.Blocks.Clear();
+                mainWindow.ClassWindow.GeneratedClassTextBox.AppendText(codeTemp);
+            }
             this.Close();
             
         }

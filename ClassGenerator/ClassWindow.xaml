@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ClassGenerator.ClassWindow" Style="{StaticResource StandardWindow}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ClassWindow" Height="340" Width="500" MinWidth="450" MaxWidth="700" MinHeight="325" MaxHeight="450">
+        Title="ClassWindow" Height="320" Width="500" MinWidth="500" MinHeight="320" >
     <Grid Style="{StaticResource StandardGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -13,7 +13,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <GroupBox Header="Klasa " Style="{StaticResource StandardGroupBox}" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="276">
+        <GroupBox Header="Klasa " Style="{StaticResource StandardGroupBox}" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="180">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
@@ -23,18 +23,21 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="130*"/>
+                    <ColumnDefinition Width="58"/>
+                    <ColumnDefinition Width="28"/>
+                    <ColumnDefinition Width="86"/>
                 </Grid.ColumnDefinitions>
-                <Label>Nazwa klasy</Label>
-                <TextBox Name="ClassName" Grid.Column="1" Style="{StaticResource StandardTextBox}"/>
-                <Label Grid.Row="1">Hermetyzacja</Label>
-                <ComboBox Name="EncapsulationComboBox" Style="{StaticResource StandardComboBox}" MinWidth="150" Grid.Column="1" Grid.Row="1" ToolTip="Wybierz z listy regułę hermetyzacji" >
-                    <ComboBoxItem>Publiczna</ComboBoxItem>
-                    <ComboBoxItem>Prywatna</ComboBoxItem>
-                    <ComboBoxItem>Chroniona</ComboBoxItem>
+                <Label Grid.ColumnSpan="2">Nazwa klasy</Label>
+                <TextBox Name="ClassName" Grid.Column="2" Style="{StaticResource StandardTextBox}" TextChanged="ClassName_TextChanged"/>
+                <Label Grid.Row="1" Grid.ColumnSpan="2">Hermetyzacja</Label>
+                <ComboBox Name="EncapsulationComboBox" Style="{StaticResource StandardComboBox}" Grid.Column="2" Grid.Row="1" ToolTip="Wybierz z listy regułę hermetyzacji" SelectionChanged="EncapsulationComboBox_SelectionChanged" >
+                    <ComboBoxItem>Public</ComboBoxItem>
+                    <ComboBoxItem>Private</ComboBoxItem>
+                    <ComboBoxItem>Protected</ComboBoxItem>
+                    <ComboBoxItem>Internal</ComboBoxItem>
                 </ComboBox>
-                <CheckBox Name="IsAbstract" Content="Abstrakcyjna" Grid.ColumnSpan="2" Grid.Row="3"/>
+                <CheckBox Name="IsAbstract" Content="Abstrakcyjna" Grid.ColumnSpan="3" Grid.Row="3" Checked="IsAbstract_Checked" Unchecked="IsAbstract_Unchecked"/>
+                <CheckBox Name="IsStatic" Content="Statyczna" Grid.ColumnSpan="3" Grid.Row="4" Checked="IsStatic_Checked" Unchecked="IsStatic_Unchecked"/>
             </Grid>
         </GroupBox>
         <Grid Grid.ColumnSpan="2" Grid.Row="1">
@@ -53,6 +56,6 @@
             <Button Name="MethodViewButton" Grid.Column="1" Grid.Row="0" Style="{StaticResource StandardButton}" ToolTip="Wyswietla okienko do zmian na liście metod" Click="MethodViewButton_Click">Metody</Button>
             <Button Name="CodeGeneratorButton" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource StandardButton}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="auto"  Click="CodeGeneratorButton_Click">Generuj kod źródłowy</Button>
         </Grid>
-        <RichTextBox Name="GeneratedClassTextBox" Grid.Column="2" Grid.RowSpan="3" Style="{StaticResource StandardRichTextBox}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ></RichTextBox>
+        <RichTextBox Name="GeneratedClassTextBox" Grid.Column="2" Grid.RowSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,0,0,0" IsEnabled="False" IsManipulationEnabled="True" IsHitTestVisible="False" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" />
     </Grid>
 </Window>

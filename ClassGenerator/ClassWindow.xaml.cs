@@ -47,6 +47,11 @@ namespace ClassGenerator
                 abstractBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
                 abstractBinding.Mode = BindingMode.TwoWay;
                 IsAbstract.SetBinding(CheckBox.IsCheckedProperty, abstractBinding);
+
+                Binding staticBinding = new Binding("IsStatic");
+                staticBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
+                staticBinding.Mode = BindingMode.TwoWay;
+                IsStatic.SetBinding(CheckBox.IsCheckedProperty, staticBinding);
             }
             else
             {
@@ -65,6 +70,11 @@ namespace ClassGenerator
                 abstractBinding.Source = CurrentClass;
                 abstractBinding.Mode = BindingMode.TwoWay;
                 IsAbstract.SetBinding(CheckBox.IsCheckedProperty, abstractBinding);
+
+                Binding staticBinding = new Binding("IsStatic");
+                staticBinding.Source = CurrentClass;
+                staticBinding.Mode = BindingMode.TwoWay;
+                IsStatic.SetBinding(CheckBox.IsCheckedProperty, staticBinding); 
         }
         }
         private void MethodViewButton_Click(object sender, RoutedEventArgs e)
@@ -97,9 +107,56 @@ namespace ClassGenerator
 
         private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)
         {
-           GeneratedClassTextBox.Document.Blocks.Clear();
-           string costam = CurrentClass.GetSourceCode();
-           GeneratedClassTextBox.AppendText(costam);
+           string codeTemp = CurrentClass.GetSourceCode();
+           GeneratedClassTextBox.AppendText(codeTemp);
+        }
+
+        private void ClassName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CurrentClass.Name = ClassName.Text;
+            string codeTemp = CurrentClass.GetSourceCode();
+            GeneratedClassTextBox.Document.Blocks.Clear();
+            GeneratedClassTextBox.AppendText(codeTemp);
+        }
+
+        private void EncapsulationComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //CurrentClass.Encapsulation = EncapsulationComboBox.Text;
+            string codeTemp = CurrentClass.GetSourceCode();
+            GeneratedClassTextBox.Document.Blocks.Clear();
+            GeneratedClassTextBox.AppendText(codeTemp);
+        }
+
+        private void IsAbstract_Checked(object sender, RoutedEventArgs e)
+        {
+            CurrentClass.IsAbstract = (bool)IsAbstract.IsChecked;
+            string codeTemp = CurrentClass.GetSourceCode();
+            GeneratedClassTextBox.Document.Blocks.Clear();
+            GeneratedClassTextBox.AppendText(codeTemp);
+        }
+
+        private void IsStatic_Checked(object sender, RoutedEventArgs e)
+        {
+            CurrentClass.IsStatic = (bool)IsStatic.IsChecked;
+            string codeTemp = CurrentClass.GetSourceCode();
+            GeneratedClassTextBox.Document.Blocks.Clear();
+            GeneratedClassTextBox.AppendText(codeTemp);
+        }
+
+        private void IsStatic_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CurrentClass.IsStatic = (bool)IsStatic.IsChecked;
+            string codeTemp = CurrentClass.GetSourceCode();
+            GeneratedClassTextBox.Document.Blocks.Clear();
+            GeneratedClassTextBox.AppendText(codeTemp);
+        }
+
+        private void IsAbstract_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CurrentClass.IsStatic = (bool)IsStatic.IsChecked;
+            string codeTemp = CurrentClass.GetSourceCode();
+            GeneratedClassTextBox.Document.Blocks.Clear();
+            GeneratedClassTextBox.AppendText(codeTemp);
         }
     }
 }
