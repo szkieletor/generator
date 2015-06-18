@@ -82,12 +82,14 @@ namespace ClassGenerator
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void AddEditButton_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = (MainWindow)Application.Current.MainWindow;
+            CurrentClass.Methods = MethodViewWindow.CurrentMethodList;
+            
             if (mainWindow.ClassListView.SelectedItem == null) //Edit
             {
                 mainWindow.ClassList.Add(CurrentClass);
@@ -96,6 +98,7 @@ namespace ClassGenerator
 
         private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)
         {
+           GeneratedClassTextBox.Document.Blocks.Clear();
            string costam = CurrentClass.GetSourceCode();
            GeneratedClassTextBox.AppendText(costam);
         }

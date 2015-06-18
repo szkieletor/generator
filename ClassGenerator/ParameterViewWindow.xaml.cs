@@ -50,5 +50,10 @@ namespace ClassGenerator
         {
             ClassRef.Properties.Remove((GeneratedProperty)ParameterViewList.SelectedItem);
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

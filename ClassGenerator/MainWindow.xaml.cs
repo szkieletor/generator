@@ -47,22 +47,28 @@ namespace ClassGenerator
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (ClassListView.SelectedIndex != -1)
+            {
+                ClassList.RemoveAt(ClassListView.SelectedIndex);
+            }
+            
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void ShowButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            ClassWindow = new ClassWindow();
+            ClassWindow.ShowDialog();
         }
     }
 }

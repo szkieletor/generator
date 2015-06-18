@@ -44,5 +44,13 @@ namespace ClassGenerator
             EditMethodWindow = new EditMethodWindow();
             EditMethodWindow.Show();
         }
+
+        private void RemoveMethod_Click(object sender, RoutedEventArgs e)
+        {
+            if (MethodListView.SelectedIndex != -1)
+            {
+                CurrentMethodList.RemoveAt(MethodListView.SelectedIndex);
+            }
+        }
     }
 }
