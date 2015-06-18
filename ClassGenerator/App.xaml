@@ -76,8 +76,8 @@
                         <Border Name="Border" BorderThickness="1" CornerRadius="5" BorderBrush="Gray">
                             <Border.Background>
                                 <LinearGradientBrush>
-                                    <GradientStop Color="#FFC1E6FF" Offset="0.3"></GradientStop>
-                                    <GradientStop Color="#FFC1E6FF" Offset="0.7"></GradientStop>
+                                    <GradientStop Color="White" Offset="0.3"></GradientStop>
+                                    <GradientStop Color="White" Offset="0.7"></GradientStop>
                                 </LinearGradientBrush>
                             </Border.Background>
                             

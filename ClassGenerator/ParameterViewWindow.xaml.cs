@@ -29,6 +29,11 @@ namespace ClassGenerator
         public ParameterViewWindow()
         {
             InitializeComponent();
+            Binding propertiesBinding = new Binding("Properties");
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            propertiesBinding.Source = mainWindow.ClassWindow.CurrentClass.Properties;
+            propertiesBinding.Mode = BindingMode.TwoWay;
+            ParameterViewList.SetBinding(CheckBox.IsCheckedProperty, propertiesBinding);
             
         }
 
@@ -49,6 +54,10 @@ namespace ClassGenerator
         private void RemoveParameter_Click(object sender, RoutedEventArgs e)
         {
             ClassRef.Properties.Remove((GeneratedProperty)ParameterViewList.SelectedItem);
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            string codeTemp = mainWindow.ClassWindow.CurrentClass.GetSourceCode();
+            mainWindow.ClassWindow.GeneratedClassTextBox.Document.Blocks.Clear();
+            mainWindow.ClassWindow.GeneratedClassTextBox.AppendText(codeTemp);
         }
     }
 }
