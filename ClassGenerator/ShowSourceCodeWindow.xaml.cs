@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClassGenerator.Models;
 
 namespace ClassGenerator
 {
@@ -22,6 +23,9 @@ namespace ClassGenerator
         public ShowSourceCodeWindow()
         {
             InitializeComponent();
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            string codeTemp = ((GeneratedClass)(mainWindow.ClassListView).SelectedItem).GetSourceCode();
+            SourceCodeTextBox.AppendText(codeTemp);
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)

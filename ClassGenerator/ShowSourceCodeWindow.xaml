@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Name="Save" Style="{StaticResource StandardButton}" Content="Zapisz" Grid.Column="0" Click="Save_Click"></Button>

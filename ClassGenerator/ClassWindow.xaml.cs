@@ -24,14 +24,18 @@ namespace ClassGenerator
         public GeneratedClass CurrentClass { get; set; }
         public ParameterViewWindow ParameterViewWindow { get; set; }
         public MethodViewWindow MethodViewWindow { get; set; }
+        
+        MainWindow mainWindow;
         public ClassWindow()
         {
             InitializeComponent();           
             CurrentClass = new GeneratedClass();
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            
+            mainWindow = (MainWindow)Application.Current.MainWindow;
 
             if (mainWindow.ClassListView.SelectedItem != null) //Edit
             {
+                CurrentClass = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
                 Binding nameBinding = new Binding();
                 nameBinding.Source = mainWindow.ClassList[mainWindow.ClassListView.SelectedIndex];
                 nameBinding.Path = new PropertyPath("Name");
@@ -86,6 +90,7 @@ namespace ClassGenerator
         private void ParameterViewButton_Click(object sender, RoutedEventArgs e)
         {
             ParameterViewWindow = new ParameterViewWindow();
+            if (mainWindow.ClassListView.SelectedItem != null)
             ParameterViewWindow.ToClassRef(CurrentClass);
             ParameterViewWindow.ShowDialog();
         }
