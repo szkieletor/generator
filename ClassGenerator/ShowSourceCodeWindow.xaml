@@ -8,18 +8,18 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Button Name="Save" Style="{StaticResource StandardButton}" Content="Zapisz" Grid.Row="0" Click="Save_Click"></Button>
-            <Button Name="Return" Style="{StaticResource StandardButton}" Content="Powrót" Grid.Row="1" Click="Return_Click"></Button>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="Save" Style="{StaticResource StandardButton}" Content="Zapisz" Grid.Column="0" Click="Save_Click"></Button>
+            <Button Name="Return" Style="{StaticResource StandardButton}" Content="Powrót" Grid.Column="1" Click="Return_Click"></Button>
         </Grid>
-        <RichTextBox Name="SourceCodeTextBox" Grid.Column="1" Grid.RowSpan="2"></RichTextBox>
+        <RichTextBox Name="SourceCodeTextBox" Grid.Row="0" Grid.ColumnSpan="2"></RichTextBox>
     </Grid>
     
 </Window>

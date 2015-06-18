@@ -98,7 +98,6 @@ namespace ClassGenerator
         private void AddEditButton_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = (MainWindow)Application.Current.MainWindow;
-            CurrentClass.Methods = MethodViewWindow.CurrentMethodList;
             
             if (mainWindow.ClassListView.SelectedItem == null) //Edit
             {
