@@ -51,5 +51,13 @@ namespace ClassGenerator
             ((MainWindow)Application.Current.MainWindow).ClassWindow.CurrentClass.Methods.Add(CurrentMethod);
             Close();
         }
+
+        private void RemoveParameterFromList_Click(object sender, RoutedEventArgs e)
+        {
+            if (ParameterListView.SelectedIndex != -1)
+            {
+                CurrentMethod.Parameters.RemoveAt(ParameterListView.SelectedIndex);
+            }
+        }
     }
 }

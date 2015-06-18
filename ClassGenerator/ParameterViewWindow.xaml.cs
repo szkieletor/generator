@@ -59,5 +59,10 @@ namespace ClassGenerator
             mainWindow.ClassWindow.GeneratedClassTextBox.Document.Blocks.Clear();
             mainWindow.ClassWindow.GeneratedClassTextBox.AppendText(codeTemp);
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
