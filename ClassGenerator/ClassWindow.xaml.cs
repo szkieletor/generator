@@ -108,6 +108,7 @@ namespace ClassGenerator
             {
                 mainWindow.ClassList.Add(CurrentClass);
             }
+            this.Close();
         }
 
         private void CodeGeneratorButton_Click(object sender, RoutedEventArgs e)

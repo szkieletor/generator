@@ -1,4 +1,5 @@
 ﻿using ClassGenerator.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -59,7 +60,11 @@ namespace ClassGenerator
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            SaveFileDialog a = new SaveFileDialog();
+            a.AddExtension = true;
+            a.Filter = "Plik tekstowy (.txt)|*.txt|Plik XML (.xml)|*.xml|Plik JSON (.json)|*.json";
+            a.DefaultExt = "txt";
+            a.ShowDialog();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

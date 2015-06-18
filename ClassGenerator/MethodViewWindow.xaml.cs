@@ -52,5 +52,10 @@ namespace ClassGenerator
                 CurrentMethodList.RemoveAt(MethodListView.SelectedIndex);
             }
         }
+
+        private void SaveMethod_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
