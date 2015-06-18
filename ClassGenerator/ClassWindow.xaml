@@ -53,6 +53,6 @@
             <Button Name="MethodViewButton" Grid.Column="1" Grid.Row="0" Style="{StaticResource StandardButton}" ToolTip="Wyswietla okienko do zmian na liście metod" Click="MethodViewButton_Click">Metody</Button>
             <Button Name="CodeGeneratorButton" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource StandardButton}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="auto"  Click="CodeGeneratorButton_Click">Generuj kod źródłowy</Button>
         </Grid>
-        <RichTextBox Name="GeneratedClassTextBox" Grid.Column="2" Grid.RowSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ></RichTextBox>
+        <RichTextBox Name="GeneratedClassTextBox" Grid.Column="2" Grid.RowSpan="3" Style="{StaticResource StandardRichTextBox}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ></RichTextBox>
     </Grid>
 </Window>
